@@ -1,11 +1,11 @@
 package Ristorante;
 
-import java.util.Scanner;
+import java.util.Scanner;   //con modifica
 
 public class Piatto {
 	
 	private String tipo;
-	private String descrizione;
+	private String descrizione;   
 	private float prezzo = 0;
 	
 	
