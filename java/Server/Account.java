@@ -52,26 +52,26 @@ public class Account {
 		else return false;
 	}
 	/*
-	 * Restituisce l'attributo nome dell'oggetto Account
+	 * @return restituisce l'attributo nome dell'oggetto Account
 	 */
 	public String getNome() {
 		return this.nome;
 	}
 	/*
-	 * Restituisce l'attributo username dell'oggetto Account
+	 * @return restituisce l'attributo username dell'oggetto Account
 	 * 
 	 */
 	public String getUsername() {
 		return this.username;
 	}
 	/*
-	 * Restituisce l'attributo password dell'oggetto Account
+	 * @return restituisce l'attributo password dell'oggetto Account
 	 */
 	public String getPassword() {
 		return this.password;
 	}
 	/*
-	 * Metodo che resituisce graficamente la descrizione dell'oggetto Account
+	 * @return resituisce graficamente la descrizione dell'oggetto Account
 	 */
 	public String toString() {
 		return(	"Nome: " + nome + "\t " + "User: " + username + "\n");
