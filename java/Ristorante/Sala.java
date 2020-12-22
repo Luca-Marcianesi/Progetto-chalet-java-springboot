@@ -21,7 +21,7 @@ public class Sala {
 		this.massimo = massimo;
 	}
 	/*
-	 * Metodo che fa visualizzare a schermo la situazione
+	 * @return ritorna a schermo la situazione
 	 * complessiva della sala
 	 */
 	public String toString() {
@@ -29,19 +29,19 @@ public class Sala {
 				liberi() + " tavoli liberi!\n");
 	}
 	/*
-	 * Restituisce il numero massimo di posti nella sala 
+	 * @return restituisce il numero massimo di posti nella sala 
 	 */
 	public int getMassimo() {
 		return this.massimo; 
 	}
 	/*
-	 * Restituisce il numero dei posti prenotati nella sala
+	 * @return restituisce il numero dei posti prenotati nella sala
 	 */
 	public int getPrenotati() { 
 		return this.prenotati; 
 	}
 	/*
-	 * Restituisce il numero di posti liberi nella sala
+	 * @return restituisce il numero di posti liberi nella sala
 	 */
 	public int liberi() {
 		return (massimo - prenotati);
