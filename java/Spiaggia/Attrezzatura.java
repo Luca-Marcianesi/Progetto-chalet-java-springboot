@@ -25,12 +25,14 @@ public class Attrezzatura implements OggettoPrenotabile{
 	private boolean stato = true;
 	/*
 	 * Oggetto che rappresenta la prenotazione e
-	 *  che tiene conto del numero di Attrezzi prenotati
+	 * che tiene conto del numero di Attrezzi prenotati
 	 */
 	private Prenotazione prenotazione;
 	/*
 	 * Costruttore che assegna all'oggetto di tipo Attrezzatura 
 	 * i propri parametri
+	 * @param tipo rappresenta la tipologia dell'attrezzatura
+	 * @param prezzo del singolo elemento
 	 */
 	public Attrezzatura(String tipo, float prezzo) {
 		this.tipo = tipo;
@@ -38,6 +40,7 @@ public class Attrezzatura implements OggettoPrenotabile{
 	}
 	/*
 	 * Crea un oggetto prenotazione con il nome dell'attrezzatura desiderata
+	 * @param nome della persona che ha prenotato
 	 */
 	public  void aggiungiPrenotazione(String nome) {
 		this.prenotazione = new Prenotazione(nome);
@@ -50,6 +53,7 @@ public class Attrezzatura implements OggettoPrenotabile{
 	}
 	/*
 	 * Imposta il nuovo stato dell'oggetto
+	 * @param stato dell'attrezzatura se è libera o no
 	 */
 	public void setStato(boolean stato) {
 		this.stato = stato;
