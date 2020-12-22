@@ -40,7 +40,7 @@ public class Account {
 			return true;
 		}
 		else return false;
-		}
+	}
 	/*
 	 * Metodo che permette di immettere un nuovo username verificando la password 
 	 */
