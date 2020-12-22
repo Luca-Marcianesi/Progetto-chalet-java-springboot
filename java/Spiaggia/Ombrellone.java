@@ -18,8 +18,8 @@ public class Ombrellone implements OggettoPrenotabile{
 	private int posizione;	
 	/*
 	 * Attributo che descrive lo stato della prenotazione:
-	 * - Se true l'ombrellone è libero
-	 * - Se false l'ombrellone è occupato
+	 * - Se true l'ombrellone Ã¨ libero
+	 * - Se false l'ombrellone Ã¨ occupato
 	 */
 	private boolean stato = true;
 	/*
@@ -44,19 +44,19 @@ public class Ombrellone implements OggettoPrenotabile{
 		this.prenotazione = new Prenotazione(nome);
 	}
 	/*
-	 * Metodo che si occupa della restituzione dell'attributo posizione
+	 * @return restituisce dell'attributo posizione
 	 */
 	public int getPosizione() {
 		return this.posizione;
 	}
 	/*
-	 * Restituisce lo stato
+	 * @return restituisce lo stato dell'ombrellone
 	 */
 	public boolean getStato() {
 		return stato;
 	}
 	/*
-	 * Restituisce il tipo dell'oggetto
+	 * @return restituisce il tipo dell'oggetto
 	 */
 	public String getTipo() {
 		return this.tipo;
