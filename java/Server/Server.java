@@ -77,10 +77,9 @@ public class Server {
 	 * @return true se l'username è presente
 	 */
 	private boolean controlla(String username) {
-		
-		for(Account Utente : this.lista)  if(Utente.getDescrizione() == username) return false;
+		for(Account Utente : this.lista)  if(Utente.getUsername() == username) return false;
 		return true;
-			}
+	}
 	
 	/**
 	 * Controlla se la password corrisponde alla password del account di nome "username"
@@ -91,7 +90,7 @@ public class Server {
 	private boolean controlla(String username , String password) {
 		
 		for(Account Utente : this.lista)  
-			if(Utente.getDescrizione() == username && Utente.getPassword() == password ) return true;
+			if(Utente.getUsername() == username && Utente.getPassword() == password ) return true;
 		return false;
 			}
 
