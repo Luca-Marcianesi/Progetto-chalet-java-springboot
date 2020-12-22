@@ -39,6 +39,7 @@ public class Ombrellone implements OggettoPrenotabile{
 	}
 	/*
 	 * Metodo utile per l'inserimento di una nuova prenotazione
+	 * @param nome rappresenta il nome della persona che ha fatto la prenotazione
 	 */
 	public  void aggiungiPrenotazione(String nome) {
 		this.prenotazione = new Prenotazione(nome);
@@ -63,13 +64,14 @@ public class Ombrellone implements OggettoPrenotabile{
 	}
 	/*
 	 * Reimposta lo stato dell'ombrellone
+	 * @param libero rappresenta il nuovo stato dell'oggetto ombrellone
 	 */
 	public void setStato(boolean libero) {
 		this.stato = libero;
 		if(stato) this.prenotazione = null;
 	}
 	/*
-	 * Visualizza la situazione dell'oggetto ombrellone
+	 * @return restituisce graficamente la situazione dell'oggetto ombrellone
 	 */
 	public String toString() {
 		if(this.stato) return("\t["+ this.posizione +"]");
