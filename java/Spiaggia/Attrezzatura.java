@@ -19,8 +19,8 @@ public class Attrezzatura implements OggettoPrenotabile{
 	private float prezzo;
 	/*
 	 * Descrizione dello stato della prenotazione:
-	 * - Se true oggetto è libero
-	 * - Se false oggetto è occupato
+	 * - Se true oggetto Ã¨ libero
+	 * - Se false oggetto Ã¨ occupato
 	 */
 	private boolean stato = true;
 	/*
@@ -53,7 +53,7 @@ public class Attrezzatura implements OggettoPrenotabile{
 	 */
 	public void setStato(boolean stato) {
 		this.stato = stato;
-		}
+	}
 	/*
 	 * Restituisce la tipologia dell'oggetto
 	 */
@@ -67,7 +67,7 @@ public class Attrezzatura implements OggettoPrenotabile{
 		return this.prezzo;
 	}
 	/*
-	 * Visualizzazione grafica dei parametri più importanti dell'oggetto
+	 * Visualizzazione grafica dei parametri piÃ¹ importanti dell'oggetto
 	 */
 	public String toString() {
 		return(this.tipo + " " + this.prezzo + " Stato: " + this.statoString());
