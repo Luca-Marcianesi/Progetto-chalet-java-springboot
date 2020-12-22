@@ -1,5 +1,3 @@
-//@author  LucaMarcianesi & DiegoMignani
-
 package Server;
 import java.io.BufferedInputStream;
 import java.io.FileInputStream;
@@ -12,14 +10,29 @@ import java.io.ObjectOutputStream;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
+
+/**
+ * @author LucaMarcianesi
+ * @author   DiegoMignani
+ * Classe che rappresenta il server che gestisce gli account
+ */
 public class Server {
 	
+	/**
+	 * Vector lista degli account che sono stati creati
+	 */
 	private Vector <Account> lista = new  Vector<Account>();
 	
-	public Server() {
-		//this.leggiLocale();
-	}
+	//public Server() {this.leggiLocale();}
 	
+	/**
+	 * Funzione che permette di fare il login tramite username e password
+	 * Controlla se l username è presente nel server poi controlla se la password corrisponde 
+	 * all'username
+	 * @param username String con l'username dell'utente
+	 * @param password String con la password dell'utente
+	 * @return ritorna true se l'username esiste e la password ad esso associata corrisponde
+	 */
 	public boolean Login (String username , String password) {
 		if (!this.controlla(username)) {
 			if(this.controlla(username, password)){ 
@@ -47,10 +60,52 @@ public class Server {
 		
 		}
 	
+	/**
+	 *Trasforma la lista degli account in string
+	 */
 	public String toString() {
 		String ritorno = "";
 		for(Account Elemento : this.lista) ritorno = (ritorno +Elemento.toString() + "\n");
 		return ritorno;
+	}
+	
+	
+	
+	/**
+	 * Controlla  se è presente un account con tale username
+	 * @param username String da controllare
+	 * @return true se l'username è presente
+	 */
+	private boolean controlla(String username) {
+		
+		for(Account Utente : this.lista)  if(Utente.getDescrizione() == username) return false;
+		return true;
+			}
+	
+	/**
+	 * Controlla se la password corrisponde alla password del account di nome "username"
+	 * @param username username dell'account
+	 * @param password String da controllare la corrispondenza
+	 * @return true se username e password corrispondono allo stesso account
+	 */
+	private boolean controlla(String username , String password) {
+		
+		for(Account Utente : this.lista)  
+			if(Utente.getDescrizione() == username && Utente.getPassword() == password ) return true;
+		return false;
+			}
+
+	public void salvaFile() {
+		try {
+			ObjectOutputStream file_output = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("prova.json")));
+			file_output.writeObject(this.lista);
+			
+			file_output.close();
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
 	}
 	
 	private void leggiLocale(/*String nome_file*/) {
@@ -78,31 +133,5 @@ public class Server {
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
-	}
-	
-	private boolean controlla(String username) {
-		
-		for(Account Utente : this.lista)  if(Utente.getDescrizione() == username) return false;
-		return true;
-			}
-	
-	private boolean controlla(String username , String password) {
-		
-		for(Account Utente : this.lista)  
-			if(Utente.getDescrizione() == username && Utente.getPassword() == password ) return true;
-		return false;
-			}
-
-	public void salvaFile() {
-		try {
-			ObjectOutputStream file_output = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("prova.json")));
-			file_output.writeObject(this.lista);
-			
-			file_output.close();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
 	}
 }
