@@ -43,7 +43,7 @@ public class Attrezzatura implements OggettoPrenotabile{
 		this.prenotazione = new Prenotazione(nome);
 	}
 	/*
-	 * Restituisce lo stato della prenotazione dell'oggetto
+	 * @return restituisce lo stato della prenotazione dell'oggetto
 	 */
 	public boolean getStato() {
 		return this.stato;
@@ -55,25 +55,25 @@ public class Attrezzatura implements OggettoPrenotabile{
 		this.stato = stato;
 	}
 	/*
-	 * Restituisce la tipologia dell'oggetto
+	 * @return restituisce la tipologia dell'oggetto
 	 */
 	public String getTipo() {
 		return this.tipo;
 	}
 	/*
-	 * Restituisce il prezzo dell'oggetto
+	 * @return restituisce il prezzo dell'oggetto
 	 */
 	public float getPrezzo() {
 		return this.prezzo;
 	}
 	/*
-	 * Visualizzazione grafica dei parametri più importanti dell'oggetto
+	 * @return restituisce la visualizzazione grafica dei parametri più importanti dell'oggetto
 	 */
 	public String toString() {
 		return(this.tipo + " " + this.prezzo + " Stato: " + this.statoString());
 	}
 	/*
-	 * Restituisce la rappresentazione grafica dell'esito della prenotazione
+	 * @return restituisce la rappresentazione grafica dell'esito della prenotazione
 	 */
 	private String statoString() {
 		if(this.stato) return ("libero");
