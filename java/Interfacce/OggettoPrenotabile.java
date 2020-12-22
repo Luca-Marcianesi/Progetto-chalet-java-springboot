@@ -1,6 +1,12 @@
 package Interfacce;
 
-//@author DiegoMignani
+/**
+ * @author DiegoMignani
+ * @author LucaMarcianesi
+ * 
+ *Interfaccia per gli oggetti che sono prenotabili
+ */
+
 public interface OggettoPrenotabile {
 		public boolean getStato();
 		
