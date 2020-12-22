@@ -17,6 +17,10 @@ public class Account {
 	 */
 	public  String password;
 	/*
+	 * Attributo utile per i ruoli di Proprietario e Cliente
+	 */
+	private boolean permessi=false;
+	/*
 	 * Costruttore che assegna le varie credenziali agli attributi
 	 */
 	public  Account(String nome,String username ,String password) {
@@ -76,8 +80,17 @@ public class Account {
 	public String toString() {
 		return(	"Nome: " + nome + "\t " + "User: " + username + "\n");
 	}
-	
-
-	
+	/*
+	 * @return restituisce i permessi dell'utente
+	 */
+	public boolean getPermessi() {
+		return permessi;
+	}
+	/*
+	 * @param rappresenta i nuovi permessi cambiati
+	 */
+	public void setPermessi(boolean permessi) {
+		this.permessi = permessi;
+	}
 	
 }
