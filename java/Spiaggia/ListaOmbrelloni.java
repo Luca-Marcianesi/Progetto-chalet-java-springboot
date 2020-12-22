@@ -119,7 +119,7 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		this.listaPrenozioni.aggiungi(prenotazione);
 	}
 	/*
-	 * Ritorna la lista delle prenotazioni
+	 * @return ritorna la lista delle prenotazioni
 	 */
 	public Vector<Prenotazioni> getListaPrenotazioni(){
 		return this.listaPrenotazioni;
