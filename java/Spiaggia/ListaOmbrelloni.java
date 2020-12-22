@@ -28,6 +28,8 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	/*
 	 * Costruttore che calcola il numero totale di ombrelloni,
 	 * aggiunge oggetti alla lista.
+	 * @param righe di ombrelloni nella spiaggia
+	 * @param colonne di ombrelloni nella spiaggia
 	 */
 	public ListaOmbrelloni(int righe, int colonne){
 		this.max = colonne * righe;						
@@ -41,6 +43,8 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	 * Metodo che gestisce le prenotazioni
 	 * controllando lo stato di ogni ombrellone
 	 * e visualizza l'esito della prenotazione
+	 * @param posto rappresenta il posto di ogni ombrellone
+	 * @param nome rappresenta il nome della prenotazione dell'ombrellone
 	 */
 	public boolean prenota(int posto , String nome) {		
 		for(Ombrellone ombr : lista) {
@@ -77,7 +81,7 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		}
 	}
 	/*
-	 * Metodo che calcola quanti ombrelloni disponibili ci sono nella spiaggia
+	 * @return restituisce gli ombrelloni disponibili che ci sono nella spiaggia
 	 */
 	public int postiDisponibili() {
 		int disponibili = 0;
@@ -88,6 +92,8 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	 * Metotodo che fa annullare la prenotazione di un ombrellone
 	 * controllando lo stato di ognuno
 	 * e visualizza a schermo l'esito
+	 * @param posto rappresenta la posizione dell'ombrellone nella spiaggia
+	 * @return restituisce il risultato della prenotazione
 	 */
 	public boolean annulla(int posto) {		
 		for(Ombrellone ombr : lista) {
@@ -113,6 +119,8 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	}
 	/*
 	 * Metodo che gestisce l'ordini delle prenotazioni
+	 * @param nome rappresenta il nome della persona che ha prenotato
+	 * @param posto rappresenta la posizione dell'ombrellone nella spiaggia
 	 */
 	public void aggiungiPrenotazione(String nome , int posto) {
 		PrenotazionePosto prenotazione = new PrenotazionePosto(nome, posto);
