@@ -53,11 +53,6 @@ public class Server {
 	public boolean Crea_Account (String nome , String username , String password) {
 		Account nuovo = new Account(nome , username , password);
 		if (this.controlla(username)){
-			if(this.lista.size()==0) {
-				this.lista.add(nuovo);
-				nuovo.setPermessi(true);
-			}
-			else {
 				this.lista.add(nuovo);
 			}
 			return true;
