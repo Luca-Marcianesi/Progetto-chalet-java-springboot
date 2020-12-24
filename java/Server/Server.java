@@ -50,8 +50,8 @@ public class Server {
 		}
 }
 	
-	public boolean Crea_Account (String nome , String username , String password) {
-		Account nuovo = new Account(nome , username , password);
+	public boolean Crea_Account (String username , String password) {
+		Account nuovo = new Account(username , password);
 		if (this.controlla(username)){
 				this.lista.add(nuovo);
 			}
@@ -118,7 +118,6 @@ public class Server {
 			for(Object acc : lista) {
 				if(acc instanceof JSONObject) {
 					JSONObject o1 = (JSONObject ) o;
-					String nome = (String)o1.get("nome");
 					String user  = (String)o1.get("username");;
 					String pass = (String)o1.get("password");;
 					Account a = new Account(nome,user,pass);
