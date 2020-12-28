@@ -1,15 +1,6 @@
 package Server;
-import java.io.BufferedInputStream;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.util.*;
-import java.io.BufferedOutputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import org.json.simple.JSONArray;
-import org.json.simple.JSONObject;
 
+import java.util.Vector;
 
 /**
  * @author LucaMarcianesi
@@ -22,9 +13,7 @@ public class Server {
 	 * Vector lista degli account che sono stati creati
 	 */
 	private Vector <Account> lista = new  Vector<Account>();
-	
-	//public Server() {this.leggiLocale();}
-	
+		
 	/**
 	 * Funzione che permette di fare il login tramite username e password
 	 * Controlla se l username è presente nel server poi controlla se la password corrisponde 
@@ -34,34 +23,35 @@ public class Server {
 	 * @return ritorna true se l'username esiste e la password ad esso associata corrisponde
 	 */
 	public boolean Login (String username , String password) {
-		if (!this.controlla(username)) {
+		if (this.controlla(username)) {
 			if(this.controlla(username, password)){ 
-				System.out.println("Login effettuato");
 				return true;
 				}
-			else {
-				System.out.println("Username o password errate!");
-				return false;
-			}
+			else return false;
 		}
-		else {
-		System.out.println("Informazioni errate!");
-		return false;
-		}
+		else return false;
+		
 }
 	
+	/**
+	 * Permette di creare un account ed aggiungerlo alla lista degli account 
+	 * se username non è già in uso
+	 * @param username String con l'username del nuovo account
+	 * @param password String  con la password del nuovo account
+	 * @return boolean true se l'account è stato creato con successo false altrimenti
+	 */
 	public boolean Crea_Account (String username , String password) {
-		Account nuovo = new Account(username , password);
-		if (this.controlla(username)){
+		if (!this.controlla(username)){
+			Account nuovo = new Account(username , password);
 				this.lista.add(nuovo);
-			}
-			return true;
-		}
+				return true;
+				}
 		else  return false;
-	}
+		
+		}
 	
 	/**
-	 *Trasforma la lista degli account in string
+	 *Trasforma la lista degli account in String
 	 */
 	public String toString() {
 		String ritorno = "";
@@ -69,31 +59,47 @@ public class Server {
 		return ritorno;
 	}
 	
-	
-	
 	/**
 	 * Controlla  se è presente un account con tale username
 	 * @param username String da controllare
-	 * @return true se l'username è presente
+	 * @return  boolean true se l'username è presente false altrimenti
 	 */
 	private boolean controlla(String username) {
-		for(Account Utente : this.lista)  if(Utente.getUsername() == username) return false;
-		return true;
+		
+		for(Account Utente : this.lista)  {
+			if(username.equalsIgnoreCase(Utente.getUsername())) {
+				return true;
+			}
+		}
+		return false;
+			}
+	
+	/**
+	 * Ritorna la lista degli Account
+	 * @return vector il vettore che contiene gli account
+	 */
+	public Vector <Account> getLista(){
+		return this.lista;
 	}
 	
 	/**
 	 * Controlla se la password corrisponde alla password del account di nome "username"
-	 * @param username username dell'account
+	 * @param username String con l'username dell'account
 	 * @param password String da controllare la corrispondenza
-	 * @return true se username e password corrispondono allo stesso account
+	 * @return boolean true se username e password corrispondono allo stesso account 
 	 */
 	private boolean controlla(String username , String password) {
 		
 		for(Account Utente : this.lista)  
-			if(Utente.getUsername() == username && Utente.getPassword() == password ) return true;
+			if(username.equalsIgnoreCase(Utente.getUsername()) &&  password.equalsIgnoreCase(Utente.getPassword()) ) return true;
 		return false;
 			}
-
+	
+	public void	aggiungiAccount(Account account) {
+		this.lista.add(account);
+	}
+	
+	/*
 	public void salvaFile() {
 		try {
 			ObjectOutputStream file_output = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("prova.json")));
@@ -107,7 +113,7 @@ public class Server {
 		
 	}
 	
-	private void leggiLocale(/*String nome_file*/) {
+	private void leggiLocale(/*String nome_file) {
 		String nome_file = "listaa.json";
 		try {
 			ObjectInputStream file_input = new ObjectInputStream(new BufferedInputStream(new FileInputStream(nome_file)));
@@ -120,7 +126,7 @@ public class Server {
 					JSONObject o1 = (JSONObject ) o;
 					String user  = (String)o1.get("username");;
 					String pass = (String)o1.get("password");;
-					Account a = new Account(nome,user,pass);
+					Account a = new Account(user,pass);
 					this.lista.add(a);
 				}
 			}
@@ -132,4 +138,5 @@ public class Server {
 			e.printStackTrace();
 		}
 	}
+	*/
 }
