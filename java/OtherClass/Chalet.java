@@ -1,17 +1,18 @@
+package OtherClass;
 
-package altreClassi;
-import server.Server;
+import Server.*;
 import Spiaggia.ListaOmbrelloni;
-import liste.ListaOggettiPrenotabili;
-import ristorante.Tavolo;
-import altreClassi.Eventi;
+import Liste.ListaOggettiPrenotabili;
+import Ristorante.Tavolo;
 import Spiaggia.Attrezzatura;
 
 public class Chalet {
 	
+	private Account proprietario = new Account("admin","admin");
+	
 	public Server server = new Server ();
 	
-	public ListaOmbrelloni listaOmbrelloni;
+	public ListaOmbrelloni  listaOmbrelloni;
 	
 	public ListaOggettiPrenotabili <Tavolo> listaTavoli = new ListaOggettiPrenotabili <Tavolo> ();
 	
@@ -20,11 +21,18 @@ public class Chalet {
 	public ListaOggettiPrenotabili <Attrezzatura> listaAttrezzatura = new ListaOggettiPrenotabili <Attrezzatura> ();
 	
 	
-	public Chalet (int riga, int colonna) {
+	public void creaSpiaggia (int riga, int colonna) {
 		this.listaOmbrelloni = new ListaOmbrelloni(riga, colonna);
 	}
 	
+	public Chalet() {
+		this.server.aggiungiAccount(proprietario);
+	}
 	
-	
+	public boolean proprietario(String user) {
+		if( user == this.proprietario.getUsername()) return true;
+		else return false;
+		
+	}
 	
 }
