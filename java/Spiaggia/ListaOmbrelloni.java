@@ -34,9 +34,9 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		this.setPrevisioni();
 		if(previsione.getCondizioni()) {
 		for(Ombrellone ombr : lista) {
-			if(ombr.getPosizione()==posto) {
-				if(ombr.getStato()) {
-						ombr.setStato(false);
+			if(ombrellone.getPosizione()==posto) {
+				if(ombrellone.getStato()) {
+						ombrellone.setStato(false);
 						this.aggiungiPrenotazione(nome,posto);
 						return true;
 					}
@@ -50,15 +50,15 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	
 	public int postiDisponibili() {
 		int disponibili = 0;
-		for (Ombrellone k : lista) if(k.getStato()) disponibili++;
+		for (Ombrellone ombrellone : lista) if(ombrellone.getStato()) disponibili++;
 		return disponibili;
 	}
 	
 	public boolean annulla(int posto) {		
-		for(Ombrellone ombr : lista) {
-			if(ombr.getPosizione()==posto) {
-				if(!ombr.getStato()) {
-					ombr.setStato(true);
+		for(Ombrellone ombrellone : lista) {
+			if(ombrellone.getPosizione()==posto) {
+				if(!ombrellone.getStato()) {
+					ombrellone.setStato(true);
 					return true;
 					}			
 				return false;
