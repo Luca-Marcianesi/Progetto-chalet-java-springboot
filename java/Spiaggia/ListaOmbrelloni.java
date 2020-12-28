@@ -33,7 +33,7 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	public boolean prenota(int posto , String nome) {
 		this.setPrevisioni();
 		if(previsione.getCondizioni()) {
-		for(Ombrellone ombr : lista) {
+		for(Ombrellone ombrellone : lista) {
 			if(ombrellone.getPosizione()==posto) {
 				if(ombrellone.getStato()) {
 						ombrellone.setStato(false);
