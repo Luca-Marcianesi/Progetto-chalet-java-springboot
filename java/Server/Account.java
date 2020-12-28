@@ -5,10 +5,6 @@ package Server;
  */
 public class Account {
 	/*
-	 * Nome della persona che possiede questo account
-	 */
-	public  String nome;
-	/*
 	 * Username impostato dalla persona che possiede l'account
 	 */
 	public String username;
@@ -17,29 +13,25 @@ public class Account {
 	 */
 	public  String password;
 	/*
-	 * Attributo utile per i ruoli di Proprietario e Cliente
-	 */
-	private boolean permessi=false;
-	/*
 	 * Costruttore che assegna le varie credenziali agli attributi
 	 */
-	public  Account(String nome,String username ,String password) {
-		this.nome = nome;
+	public  Account(String username ,String password) {
+		
 		this.username = username;
 		this.password = password;
 	}
 	/*
 	 * Metodo utile per la verifica della password
 	 */
-	private boolean controlla_Password (String Password) {
+	private boolean controllaPassword (String Password) {
 		if(this.password == Password) return true;
 		else return false;
 	}
 	/*
 	 * Metodo che permette di immettere una nuova password controllando quella precedente 
 	 */
-	public boolean Modifica_Pass(String Vecchia_Password, String Nuova_Password) {
-		if (this.controlla_Password(Vecchia_Password)) {
+	public boolean modificaPassword(String Vecchia_Password, String Nuova_Password) {
+		if (this.controllaPassword(Vecchia_Password)) {
 			this.password = Nuova_Password;
 			return true;
 		}
@@ -48,19 +40,14 @@ public class Account {
 	/*
 	 * Metodo che permette di immettere un nuovo username verificando la password 
 	 */
-	public boolean Modifica_Username(String Password, String Nuovo_Username) {
-		if (this.controlla_Password(Password)) {
+	public boolean modificaUsername(String Password, String Nuovo_Username) {
+		if (this.controllaPassword(Password)) {
 			this.username = Nuovo_Username;
 			return true;
 		}
 		else return false;
 	}
-	/*
-	 * @return restituisce l'attributo nome dell'oggetto Account
-	 */
-	public String getNome() {
-		return this.nome;
-	}
+	
 	/*
 	 * @return restituisce l'attributo username dell'oggetto Account
 	 * 
@@ -79,18 +66,6 @@ public class Account {
 	 */
 	public String toString() {
 		return(	"Nome: " + nome + "\t " + "User: " + username + "\n");
-	}
-	/*
-	 * @return restituisce i permessi dell'utente
-	 */
-	public boolean getPermessi() {
-		return permessi;
-	}
-	/*
-	 * @param rappresenta i nuovi permessi cambiati
-	 */
-	public void setPermessi(boolean permessi) {
-		this.permessi = permessi;
 	}
 	
 }
