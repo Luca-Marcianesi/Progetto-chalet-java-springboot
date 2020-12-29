@@ -1,28 +1,56 @@
 package Ristorante;
+import java.util.Vector;
+import prova.ombrelloni.Model.*;
 
-import java.util.TreeSet;
 
+
+/**
+ * @author Luca
+ *Classe che gestisce il menù
+ */
 public class Menu {
-	private TreeSet<Piatto> menu = new TreeSet<Piatto>();
-	private float coperto = 3 ;
+	/**
+	 * Oggetto che contiene l'elenco dei piatti
+	 */
+	private Vector<Piatto> menu;
+	private UsaApi api = new UsaApi();
 	
-	public void add_menu(TreeSet<Piatto> elenco_piatti , int codice ) {
-		for(Piatto piatto : elenco_piatti) if(piatto.getCodice() == codice ) this.menu.add(piatto);	
-		}	
-	
-	public void elimina_menù( String descrizione ) {
-		for(Piatto piatto : this.menu) if(piatto.getDescrizione() == descrizione ) this.menu.remove(piatto);	
+	public Menu() {
+	this.menu = api.valorizzaMenu();
+		
+	}
+	/**
+	 * Aggiunge un oggetto piatto al menù
+	 * @param descrizione string descrizione del piatto
+	 * @param prezzo float il prezzo del piatto
+	 */
+	public void add_menu(String descrizione, float prezzo) {
+		Piatto piatto = new Piatto(descrizione,prezzo);
+		this.menu.add(piatto);	
 		}
 	
-	public void visualizza(){
-		System.out.println("Men�: \n" );
-		for(Piatto piatto : this.menu) System.out.println(piatto + "\n");
-		System.out.println("\nCoperto: " +  coperto  + " �" + "\n");
+	public void setPrezzo(int codice,float prezzo) {
+		for(Piatto piatto : this.menu) if(piatto.getCodice() == codice ) piatto.setPrezzo(prezzo);
 	}
 	
-	public void setCoperto(float c) {
-		this.coperto = c ;
+	/**
+	 * Elimina il  piatto con il codice dall'elenco 
+	 * @param codice int codice del piatto da eliminare
+	 */
+	public void eliminaDalMenu( int codice ) {
+		for(Piatto piatto : this.menu) if(piatto.getCodice() == codice ) this.menu.remove(piatto);	
 		}
-
-
+	
+	public Vector<Piatto> getLista() {
+		return this.menu;
+	}
+	
+	/**
+	 *Trasforma il menù in striga
+	 */
+	public String toString() {
+		String stringa="";
+		for(Piatto piatto : this.menu)  stringa += (piatto +"\n");
+		return stringa;			
+	}
 }

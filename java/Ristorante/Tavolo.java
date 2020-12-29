@@ -1,8 +1,8 @@
+package Ristorante;
 
+import Interfacce.OggettoPrenotabile;
+import OtherClass.Prenotazione;
 
-package ristorante;
-import interfacce.OggettoPrenotabile;
-import altreClassi.Prenotazione;
 /**
  * @author  Edoardo Tarulli
  *
@@ -14,8 +14,8 @@ public class Tavolo implements OggettoPrenotabile {
 	/**
 	 * int numeroposti = numero dei posti per ogni tavolo.
 	 * prenotazione = oggetto della classe Prenotazione per specificare il nome della prenotazione.
-	 * string tipo = specifica cosa io voglio prenotare cioè il tavolo
-	 * boolean stato = serve per specificare lo stato appunto della disponibilità del tavolo.
+	 * string tipo = specifica cosa io voglio prenotare cioÃ¨ il tavolo
+	 * boolean stato = serve per specificare lo stato appunto della disponibilitÃ  del tavolo.
 	 */
 		private int numeroposti;
 		private boolean stato;
@@ -30,6 +30,7 @@ public class Tavolo implements OggettoPrenotabile {
 		public Tavolo ( int numeropersone ) { 
 			
 			this.numeroposti = numeropersone;
+			this.stato = true;
 		}
 		
 		/**
@@ -66,15 +67,21 @@ public class Tavolo implements OggettoPrenotabile {
 		 */
 		public void aggiungiPrenotazione(String nome) {
 			
-			this.prenotazione = new Prenotazione (nome);
+			this.prenotazione = new Prenotazione (nome,1);
 		}
 		
 
 		/**
-		 * Metodo getStato per aggiornare la possibilità di prenotare il tavolo.
+		 * Metodo getStato per aggiornare la possibilitÃ  di prenotare il tavolo.
 		 */
 		public boolean getStato () {
 			return this.stato;
+			
+		}
+		
+		public boolean controlloPosti(int numeroPersone) {
+			if(this.numeroposti>= numeroPersone) return true;
+			else return false;
 		}
 		
 		
@@ -98,11 +105,11 @@ public class Tavolo implements OggettoPrenotabile {
 		
 		
 		/**
-		 * Metodo getPrenotazione per assegnare il valore cioè il numero della prenotazione 
+		 * Metodo getPrenotazione per assegnare il valore cioÃ¨ il numero della prenotazione 
 		 * @return
 		 */
 		public Prenotazione getPrenotazione () {
 			return this.prenotazione;
 		}
+		
 }
-
