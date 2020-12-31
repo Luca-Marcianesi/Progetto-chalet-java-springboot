@@ -4,7 +4,7 @@ import java.util.Vector;
 
 /**
  * @author LucaMarcianesi
- * @author   DiegoMignani
+ * @author DiegoMignani
  * Classe che rappresenta il server che gestisce gli account
  */
 public class Server {
@@ -51,7 +51,7 @@ public class Server {
 		}
 	
 	/**
-	 *Trasforma la lista degli account in String
+	 * @return restituisce in stringa la lista di tutti gli Account
 	 */
 	public String toString() {
 		String ritorno = "";
@@ -94,49 +94,10 @@ public class Server {
 			if(username.equalsIgnoreCase(Utente.getUsername()) &&  password.equalsIgnoreCase(Utente.getPassword()) ) return true;
 		return false;
 			}
-	
-	public void	aggiungiAccount(Account account) {
+	/**
+	* Classe che serve per aggiungere manualmente un account al server
+	* @param Account account da aggiungere al server
+	*/
+	public void aggiungiAccount(Account account) {
 		this.lista.add(account);
 	}
-	
-	/*
-	public void salvaFile() {
-		try {
-			ObjectOutputStream file_output = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream("prova.json")));
-			file_output.writeObject(this.lista);
-			
-			file_output.close();
-			
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		
-	}
-	
-	private void leggiLocale(/*String nome_file) {
-		String nome_file = "listaa.json";
-		try {
-			ObjectInputStream file_input = new ObjectInputStream(new BufferedInputStream(new FileInputStream(nome_file)));
-			
-			JSONObject o	 = (JSONObject) file_input.readObject();
-			JSONArray lista = (JSONArray) o.get("lista");
-			
-			for(Object acc : lista) {
-				if(acc instanceof JSONObject) {
-					JSONObject o1 = (JSONObject ) o;
-					String user  = (String)o1.get("username");;
-					String pass = (String)o1.get("password");;
-					Account a = new Account(user,pass);
-					this.lista.add(a);
-				}
-			}
-			
-			file_input.close();
-		} catch (IOException e) {
-			e.printStackTrace();
-		} catch (ClassNotFoundException e) {
-			e.printStackTrace();
-		}
-	}
-	*/
-}
