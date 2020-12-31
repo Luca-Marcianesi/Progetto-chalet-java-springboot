@@ -48,7 +48,7 @@ POST|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
   
 
   - ### Proprietario
-  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Sequence%20Diagram%20Proprietario.jpg" width="600" height="400" ></div>
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/diagramma%20delle%20sequenze%20Proprietario.jpg" width="600" height="400" ></div>
 
 
 *** 
