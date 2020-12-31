@@ -21,21 +21,21 @@ POST|/prenotaOmbrellone|Per prenotare un posto ombrellone inserendo il posto e i
   
   - ### Cliente
   
-  <div align="center"><img src="https://github.com/Luca-Marcianesi/Progetto-chalet/blob/master/img/Cliente.jpg" width="500" height="500" ></div>
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Cliente.jpg" width="500" height="500" ></div>
      
      
   - ### Proprietario
-  <div align="center"><img src="https://github.com/Luca-Marcianesi/Progetto-chalet/blob/master/img/Proprietario.jpg" width="500" height="500" ></div>
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Proprietario.jpg" width="500" height="500" ></div>
 
      
 - ## Use Class Diagram
-  <div align="center"><img src="https://github.com/Luca-Marcianesi/Progetto-chalet/blob/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
   
      
 - ## Sequence Diagram
 
   - ### Cliente
-  <div align="center"><img src="https://github.com/Luca-Marcianesi/Progetto-chalet/blob/master/img/Diagramma%20delle%20sequenze%20Cliente.jpg" width="600" height="400" ></div>
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Diagramma%20delle%20sequenze%20Cliente.jpg" width="600" height="400" ></div>
   
 
   - ### Proprietario
