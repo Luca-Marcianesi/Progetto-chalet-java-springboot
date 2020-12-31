@@ -1,7 +1,8 @@
-package Ristorante;
 
-import Interfacce.OggettoPrenotabile;
-import OtherClass.Prenotazione;
+
+package ristorante;
+import interfacce.OggettoPrenotabile;
+import altreClassi.Prenotazione;
 
 /**
  * @author  Edoardo Tarulli
@@ -14,8 +15,8 @@ public class Tavolo implements OggettoPrenotabile {
 	/**
 	 * int numeroposti = numero dei posti per ogni tavolo.
 	 * prenotazione = oggetto della classe Prenotazione per specificare il nome della prenotazione.
-	 * string tipo = specifica cosa io voglio prenotare cio√® il tavolo
-	 * boolean stato = serve per specificare lo stato appunto della disponibilit√† del tavolo.
+	 * string tipo = specifica cosa io voglio prenotare cioË il tavolo
+	 * boolean stato = serve per specificare lo stato appunto della disponibilit‡ del tavolo.
 	 */
 		private int numeroposti;
 		private boolean stato;
@@ -34,7 +35,7 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 		
 		/**
-		 * @param numeroposti = Metodo set per il numero dei posti 
+		 * @param numeroposti = Metodo set per andare a settare il numero dei posti.
 		 */
 		public void setPosti (int numeroposti) { 
 			this.numeroposti = numeroposti;
@@ -43,7 +44,7 @@ public class Tavolo implements OggettoPrenotabile {
 		 
 		
 		/**
-		 * Metodo getPosti per assegnare il numero dei posti
+		 * Metodo getPosti che restituisce il numero dei posti.
 		 * @return numeroposti.
 		 * 
 		 */
@@ -63,22 +64,27 @@ public class Tavolo implements OggettoPrenotabile {
 		
 
 		/**
-		 *  Metodo aggiungi prenotazione per creare una nuova prenotazione.
+		 *  Metodo aggiungi prenotazione che prende String nome come argomento
+		 *  per creare una nuova prenotazione.
 		 */
 		public void aggiungiPrenotazione(String nome) {
 			
-			this.prenotazione = new Prenotazione (nome,1);
+			this.prenotazione = new Prenotazione (nome);
 		}
 		
 
 		/**
-		 * Metodo getStato per aggiornare la possibilit√† di prenotare il tavolo.
+		 * Metodo getStato che restituisce lo stato della disponibilit‡ del tavolo.
 		 */
 		public boolean getStato () {
 			return this.stato;
 			
 		}
 		
+		/** Metodo controllaPosti che prende come parametro il numero delle persone e fa un controllo:
+		 * se il numero dei posti Ë maggiore del numero delle persone allora restituisce vero, 
+		 * altrimenti restituisce false.
+		 */
 		public boolean controlloPosti(int numeroPersone) {
 			if(this.numeroposti>= numeroPersone) return true;
 			else return false;
@@ -87,7 +93,7 @@ public class Tavolo implements OggettoPrenotabile {
 		
 
 		/**
-		 * Metodo setStato per vedere lo stato dei tavoli.
+		 * Metodo setStato per settare lo stato dei tavoli ( disponibile o no )
 		 */
 		public void setStato(boolean stato) {
 			this.stato = stato;
@@ -96,7 +102,7 @@ public class Tavolo implements OggettoPrenotabile {
 		
 		
 		/**
-		 * Metodo getTipo per specificare il tipo evento ( in questo caso prenoto il tavolo ) nella chiamata postman.
+		 * Metodo getTipo che restituisce il tipo di "evento" da prenotare, nel nostro caso il tavolo.
 		 */
 		public String getTipo() {
 			return this.tipo;
@@ -105,7 +111,7 @@ public class Tavolo implements OggettoPrenotabile {
 		
 		
 		/**
-		 * Metodo getPrenotazione per assegnare il valore cio√® il numero della prenotazione 
+		 * Metodo getPrenotazione che restituisce la prenotazione.
 		 * @return
 		 */
 		public Prenotazione getPrenotazione () {
@@ -113,3 +119,4 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 		
 }
+
