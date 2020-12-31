@@ -14,6 +14,11 @@ import ProgettoOOP.chalet.Model.Server.Server;
 //import ProgettoOPP.chalet.Model.Eccezioni.*;
 
 
+/**
+ * @author LucaMarcianesi
+ * Classe che gestisce le chiamate postman e risponde 
+ *
+ */
 @RestController
 public class Controller {
 	
@@ -21,12 +26,24 @@ public class Controller {
 	private boolean accesso;
 	private String user ;
 	
+	/**
+	 * Costruttore che crea lo chalet , 
+	 * imposta l'accesso a false (ovvero non è stato fatto ancora il login)
+	 * e quindi l'username dell'utente è vuoto
+	 * 
+	 */
 	public Controller() {
 		this.chalet = new Chalet();
 		this.accesso = false;
 		this.user =  "";
 	}
 	
+	/**
+	 * Permette ad un utente di creare un account cliente
+	 * @param username Username per l'account
+	 * @param password Password dell'account
+	 * @return Esito della creazione
+	 */
 	@PostMapping("/creaAccount")
 	public String test1(@RequestParam(name = "user")String username,@RequestParam(name = "pass")String password) {
 		if(this.chalet.server.Crea_Account(username, password)) {
@@ -35,6 +52,14 @@ public class Controller {
 		else return "Username in uso";
 	}
 	
+	/**
+	 * Permette di effettuare il login al server dello chalet
+	 * Se il login viene effettuato vengono aggionate le variabili user ed accesso
+	 * Facendo una prenotazione in seguito nel nome della prenotazione verra inserito l'user
+	 * @param username Usename dell'utente
+	 * @param password Password dell'account
+	 * @return Esito del login
+	 */
 	@PostMapping("/login")
 	public String test2(@RequestParam(name = "user")String username,@RequestParam(name = "pass")String password) {
 		if(this.chalet.server.Login(username, password)) {
@@ -45,6 +70,10 @@ public class Controller {
 		else return ("Credenziali sbagliate");
 	}
 	
+	/**
+	 * Permette al proprietario di vedere la lista degli account
+	 * @return La lista degli Account
+	 */
 	@GetMapping("/listaAccount")
 	public Server test3() {
 		if(this.chalet.proprietario(this.user))return this.chalet.server;
@@ -52,6 +81,17 @@ public class Controller {
 		
 	}
 	
+	/**
+	 * Permette al proprietario di creare un evento e lo aggiunge alla lista degli eventi
+	 * Può generare un eccezione se la data non esiste
+	 * @param nome Nome dell'evento
+	 * @param posti Posti disponibili
+	 * @param anno Anno in cui si svolge 
+	 * @param mese Mese in cui si svolge 
+	 * @param giorno Giorno in cui si svolge 
+	 * @param prezzo Prezzo dell'evento
+	 * @return Esito della creazione
+	 */
 	@PostMapping("/creaEvento")
 	public String test4(@RequestParam(name = "nome",defaultValue = "billionaire")String nome,
 			@RequestParam(name = "posti",defaultValue = "100")int posti ,
@@ -74,6 +114,13 @@ public class Controller {
 	return ("Non sei il proprietario");
 	}
 	
+	/**
+	 * Permette al proprietario di gestire la creare la spiaggia
+	 * @param righe Numero di righe
+	 * @param colonne Numero di colonne
+	 * @return Risultato della creazione
+	 * @throws NumberFormatException  se all'inserimento di cidice e prezzo viene inserita una stringa
+	 */
 	@PostMapping("/creaSpiaggia")
 	public String test5(@RequestParam(name = "righe",defaultValue = "10")int righe,@RequestParam(name = "colonne",defaultValue = "10")int colonne ) throws NumberFormatException {
 		
@@ -85,12 +132,26 @@ public class Controller {
 		else return ("Non sei il proprietario");	
 	}
 	
+	/**
+	 * Permette di vedere le previsioni per i prossimi giorni
+	 * @return Una lista di previsioni
+	 */
 	@GetMapping("/previsioni")
 	public ListaOggettiConValore<Previsioni> test6() {
 		UsaApi api = new UsaApi();
 		return api.valorizzaListaPrevisioni();
 	}
 	
+	/**
+	 * Permette all'utente di prenotare qualsiasi cosa a eccezione degli ombrelloni all'interno
+	 * dello chalet inserendo la cosa desiderata in richiesta
+	 * Controlla in ogni lista dello chalet se la richiesta è presente
+	 * @param richiesta Oggetto richiesto dall'utente
+	 * @param nome Nome dell'utente
+	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 è il valore di default
+	 * @return Esito della prenotaazione
+	 * @throws NumberFormatException
+	 */
 	@PostMapping("/prenota")
 	public String test7(@RequestParam(name = "richiesta")String richiesta,@RequestParam(name = "nome",defaultValue = "")String nome,@RequestParam(name = "posti",defaultValue = "1")int posti) throws NumberFormatException{
 		if(posti<1) return ("prenotazione non riuscita");
@@ -102,23 +163,43 @@ public class Controller {
 				
 			}
 	
+	/**
+	 * Permette di prenotare un ombrellone
+	 * @param posto Posto della spiaggia da prenotare
+	 * @param nome Nome della persona che prenota
+	 * @return Risultato della prenotazione
+	 * @throws NumberFormatException Se all'inserimento di cidice e prezzo viene inserita una stringa
+	 */
 	@PostMapping("/prenotaOmbrellone")
-	public String test8(@RequestParam(name = "posto")int posto,@RequestParam(name = "nome")String nome) throws NumberFormatException {
+	public String test8(@RequestParam(name = "posto" )int posto,@RequestParam(name = "nome",defaultValue = "")String nome) throws NumberFormatException {
 		if (this.accesso) nome = this.user;
 		if(chalet.listaOmbrelloni.prenota(posto, nome)) return ("prenotazione riuscita");
 		return ("prenotazione non riuscita");	
 			}
+	/**
+	 * @return Restituisce un JSONObject con tutte le informazioni dello chalet
+	 */
 	@GetMapping("/chalet")
 	public Chalet test9() {
 		if(this.chalet.proprietario(this.user)) return this.chalet;
 		else return null;
 	}
 	
+	/**
+	 * @return Restituisce la lista dei vini
+	 */
 	@GetMapping("/vini")
 	public Vector<Piatto> test10() {
 		return this.chalet.menuVini.getLista();
 	}
 	
+	/**
+	 * Permette al proprietario di modificare i prezzi del vino che di base sono fissati a zero
+	 * @param codice Codice del vino visibile chiamando la lista dei vini
+	 * @param prezzo Prezzo da inserire 
+	 * @return String con la risposta all operazione
+	 * @throws NumberFormatException se all'inserimento di cidice e prezzo viene inserita una stringa
+	 */
 	@PostMapping("/cambiaVino")
 	public String test11(@RequestParam(name = "codice")int codice,@RequestParam(name = "prezzo")float prezzo) throws NumberFormatException{
 		if(prezzo<0)return("Prezzo non consentito");
