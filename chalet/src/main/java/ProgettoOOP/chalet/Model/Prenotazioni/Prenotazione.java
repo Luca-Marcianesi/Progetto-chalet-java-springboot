@@ -19,7 +19,9 @@ public class Prenotazione {
 	/**
 	 * Costruttore della classe
 	 * @param nome  Nome di chi prenota
-	 * @param numeroPrenotazione Numero della prenotazione
+	 * @param numeroPrenotazione Numero della prenotazione.Per gli oggetti prenotabili
+	 * da una sola persona (es Tavolo )fisso a 1 mentre per gli oggetti
+	 * prenotabili da molte per (es Evento ) variabile.
 	 */
 	public Prenotazione (String nome,int numeroPrenotazione) {
 		this.nome = nome;
