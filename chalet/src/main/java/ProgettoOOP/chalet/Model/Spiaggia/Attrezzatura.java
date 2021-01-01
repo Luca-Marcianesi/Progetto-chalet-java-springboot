@@ -8,8 +8,6 @@ import ProgettoOOP.chalet.Model.Prenotazioni.*;
 import ProgettoOOP.chalet.Model.OtherClass.Previsioni;
 import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
 
-
-
 /*
  * @author DiegoMignani
  * Classe che rappresenta le varie 
@@ -17,7 +15,6 @@ import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
  * Implementa l'interfaccia OggettoPrenotabile
  */
 public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
-	
 	/*
 	 * Descrizione della tipologia di attrezzatura
 	 */
@@ -80,7 +77,7 @@ public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
 		return(this.tipo + " " + this.prezzo + " Stato: " + this.statoString());
 	}
 	/*
-	 * @return restituisce la rappresentazione grafica dell'esito della prenotazione
+	 * @return restituisce la stringa dell'esito della prenotazione
 	 */
 	private String statoString() {
 		if(this.stato) return ("libero");
