@@ -52,9 +52,9 @@ public class Evento implements OggettoPrenotabile {
 	 */
 	public Evento (String nome , int max  ,int anno, int mese, int giorno,float prezzo) {
 		try {
-		data =  LocalDate.of(anno,mese,giorno);}
+		data =  LocalDate.of(anno,mese,giorno);
+		}
 		catch(DateTimeException e) {
-			
 		}
 		this.max = max;
 		this.nome = nome;
@@ -62,14 +62,6 @@ public class Evento implements OggettoPrenotabile {
 		this.prezzo = new Prezzo(prezzo);
 		
 	}
-	
-	/**
-	 * Chiama l'api e valorizza l'oggetto previsioni
-	 */
-	private void setPrevisioni() {
-		UsaApi api = new UsaApi();
-		this.previsione = api.valorizzaPrevisione(this.data);
-		}
 	
 	/**
 	 * @return ritorna la data dell'evento
@@ -102,8 +94,8 @@ public class Evento implements OggettoPrenotabile {
 	/**
 	 * Effettua un primo controllo sulle condizioni meteo e un secondo sulla 
 	 * disponibilita' di posti per l'evento
-	 *@return ritorna true ovvero evento disponibile se le condizioni meteo lo permettono e c'ÃƒÂ¨ 
-	 *un posto disponibile altrimenti ritorna false
+	 *@return ritorna true ovvero evento disponibile se le condizioni meteo lo permettono e
+	 *è disponibile un posto disponibile altrimenti ritorna false
 	 */
 	public boolean getStato() {
 		if(this.previsione.getCondizioni()) {
@@ -175,7 +167,13 @@ public class Evento implements OggettoPrenotabile {
 		return this.prezzo.getPrezzo();
 	}
 	
-	
+	/**
+	 * Chiama l'api e valorizza l'oggetto previsioni
+	 */
+	private void setPrevisioni() {
+		UsaApi api = new UsaApi();
+		this.previsione = api.valorizzaPrevisione(this.data);
+		}
 	
 }
 
