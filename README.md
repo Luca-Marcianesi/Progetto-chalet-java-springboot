@@ -16,15 +16,17 @@ POST|/login|Accedi al tuo account inserendo username e password
 GET|/previsioni|Visualizza le condizioni metereologiche
 POST|/prenota|Ti permette di prenotare eventi, tavoli o attrezzature per la balneazione inserendo la richiesta e il nome a cui intestare la prenotazione
 POST|/prenotaOmbrellone|Per prenotare un posto ombrellone inserendo il posto e il nome a cui intestare la prenotazione
+GET|/vini|Restituisce la lista dei vini
 
 ## Chiamate Postman Proprietario
 
 TIPO |ROTTA|DESCRIZIONE
 ------ | ------|----------
-GET|/listaAccount|Visualizza a schermo tutti gli account presenti nel server
-POST|/creaEventi|Creare gli eventi inserendo la descrizione e l'orario
-GET|/creaSpiaggia|
-POST|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
+POST|/listaAccount|Visualizza a schermo tutti gli account presenti nel server
+POST|/creaEvento|Creare gli eventi inserendo la descrizione e l'orario
+POST|/creaSpiaggia|Creazione di una spiaggia inserendo le righe e le colonne degli ombrelloni
+GET|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
+POST|/cambiaVino|Permette di modificare i prezzi dei vini
 
 - ## Use Case Diagram
   
