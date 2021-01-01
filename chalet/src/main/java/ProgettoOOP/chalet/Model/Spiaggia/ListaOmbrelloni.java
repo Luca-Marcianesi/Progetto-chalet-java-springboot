@@ -10,14 +10,33 @@ import ProgettoOOP.chalet.Model.Interfacce.OggettoPrenotabile;
 import ProgettoOOP.chalet.Model.Prenotazioni.*;
 import ProgettoOOP.chalet.Model.OtherClass.Previsioni;
 import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
-
+/*
+ * @author DiegoMignani
+ * Classe che gestisce gli ombrelloni della spiaggia
+ */
 public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>{
-	
+	/*
+	 * Rappresenta il numero totale di ombrelloni nella spiaggia
+	 */
 	private int max;
+	/*
+	 * Vector che contiene gli oggetti della classe Ombrellone
+	 */
 	private Vector<Ombrellone> lista = new Vector<Ombrellone>();
+	/*
+	 * Oggetto di tipo previsioni che tiene conto della situazione metereologiche
+	*/
 	private Previsioni previsione ;
+	/*
+	 * HashSet che tiene conto di tutte le prenotazioni di ogni ombrellone
+	 */
 	private HashSet <PrenotazionePosto> listaPrenotazioni= new HashSet <PrenotazionePosto>();
-	
+	/*
+	 * Costruttore che calcola il numero totale di ombrelloni,
+	 * aggiunge oggetti alla lista.
+	 * @param righe di ombrelloni nella spiaggia
+	 * @param colonne di ombrelloni nella spiaggia
+	 */
 	public ListaOmbrelloni(int righe, int colonne){
 		this.max = colonne * righe;						
 		for (int p = 0; p<this.max; p++) {
@@ -26,7 +45,13 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 			}
 		
 	}
-	
+	/*
+	 * Metodo che gestisce le prenotazioni
+	 * controllando lo stato di ogni ombrellone
+	 * e le condizioni meteo
+	 * @param posto rappresenta il posto di ogni ombrellone
+	 * @param nome rappresenta il nome della prenotazione dell'ombrellone
+	 */
 	public boolean prenota(int posto , String nome) {
 		this.setPrevisioni();
 		if(previsione.getCondizioni()) {
@@ -44,13 +69,20 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		return false;
 	
 	}
-	
+	/*
+	 * @return restituisce gli ombrelloni disponibili che ci sono nella spiaggia
+	 */
 	public int postiDisponibili() {
 		int disponibili = 0;
 		for (Ombrellone k : lista) if(k.getStato()) disponibili++;
 		return disponibili;
 	}
-	
+	/**
+	 * Metotodo che fa annullare la prenotazione di un ombrellone
+	 * controllando lo stato di ognuno
+	 * @param posto rappresenta la posizione dell'ombrellone nella spiaggia
+	 * @return restituisce il risultato della prenotazione
+	 */
 	public boolean annulla(int posto) {		
 		for(Ombrellone ombr : lista) {
 			if(ombr.getPosizione()==posto) {
@@ -63,22 +95,30 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		}
 		return false;
 		}
-	
+	/*
+	 * Reimposta lo stato della prenotazione dei singoli ombrelloni
+	 */
 	public void Reset() {
 		for(Ombrellone ombrellone : lista) ombrellone.setStato(true);
 		}
-	
+	/*
+	 * @return ritorna l'HashSet delle prenotazioni
+	 */
 	public HashSet <PrenotazionePosto> getListaPrenotazioni(){
 		return this.listaPrenotazioni;
 	}
-	
+	/*
+	 * Metodo che gestisce l'ordini delle prenotazioni
+	 * @param nome rappresenta il nome della persona che ha prenotato
+	 * @param posto rappresenta la posizione dell'ombrellone nella spiaggia
+	 */
 	private void aggiungiPrenotazione(String nome , int posto) {
-		
 			PrenotazionePosto prenotazione = new PrenotazionePosto(nome,this.listaPrenotazioni.size()+1, posto);
 			this.listaPrenotazioni.add(prenotazione);
 		}
-		
-	
+	/*
+	 * Metodo che imposta le condizioni meteo al tempo attuale
+	*/
 	private void setPrevisioni() {
 		UsaApi api = new UsaApi();
 		LocalDate oggi = Instant.ofEpochSecond(System.currentTimeMillis()).atZone(ZoneId.systemDefault()).toLocalDate();
