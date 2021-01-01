@@ -16,7 +16,7 @@ public class Server {
 		
 	/**
 	 * Funzione che permette di fare il login tramite username e password
-	 * Controlla se l username ÃƒÂ¨ presente nel server poi controlla se la password corrisponde 
+	 * Controlla se l username è presente nel server poi controlla se la password corrisponde 
 	 * all'username
 	 * @param username String con l'username dell'utente
 	 * @param password String con la password dell'utente
@@ -35,10 +35,10 @@ public class Server {
 	
 	/**
 	 * Permette di creare un account ed aggiungerlo alla lista degli account 
-	 * se username non ÃƒÂ¨ giÃƒÂ  in uso
+	 * se username non è in uso
 	 * @param username String con l'username del nuovo account
 	 * @param password String  con la password del nuovo account
-	 * @return boolean true se l'account ÃƒÂ¨ stato creato con successo false altrimenti
+	 * @return boolean true se l'account è stato creato con successo false altrimenti
 	 */
 	public boolean Crea_Account (String username , String password) {
 		if (!this.controlla(username)){
@@ -60,9 +60,9 @@ public class Server {
 	}
 	
 	/**
-	 * Controlla  se ÃƒÂ¨ presente un account con tale username
+	 * Controlla  se è presente un account con tale username
 	 * @param username String da controllare
-	 * @return  boolean true se l'username ÃƒÂ¨ presente false altrimenti
+	 * @return  boolean true se l'username è presente false altrimenti
 	 */
 	private boolean controlla(String username) {
 		
@@ -95,6 +95,10 @@ public class Server {
 		return false;
 			}
 	
+	/**
+	 * Metodo che permettere di aggiungere un account alla lista
+	 * @param account L'account da aggiungere
+	 */
 	public void	aggiungiAccount(Account account) {
 		this.lista.add(account);
 	}
