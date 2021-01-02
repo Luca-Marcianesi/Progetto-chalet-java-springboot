@@ -6,8 +6,7 @@
 > L'account "Proprietario", oltre a poter utilizzare le stesse operazioni del "Cliente", ha accesso a funzioni specifiche per la gestione del proprio chalet.
 
 ***
-
-## Chiamate Postman Cliente
+## Path da utilizzare per il profilo Cliente e Proprietario
 
 TIPO |ROTTA|DESCRIZIONE
 ------ | ------|----------
@@ -21,7 +20,7 @@ GET|/vini|Restituisce la lista dei vini
 GET|/visualizzaEventi|Visualizza l'elenco dei prossimi eventi
 GET|/visualizzaSpiaggia|Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
 
-## Chiamate Postman Proprietario
+## Path da utilizzare per il profilo Proprietario
 
 TIPO |ROTTA|DESCRIZIONE
 ------ | ------|----------
@@ -30,6 +29,7 @@ POST|/creaEvento|Creare gli eventi inserendo la descrizione e l'orario
 POST|/creaSpiaggia|Creazione di una spiaggia inserendo le righe e le colonne degli ombrelloni
 GET|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
 POST|/cambiaVino|Permette di modificare i prezzi dei vini
+***
 
 - ## Use Case Diagram
   > Casi d'uso utilizzati per la modellazione del progetto, suddivisi in due attori principali
@@ -49,6 +49,7 @@ POST|/cambiaVino|Permette di modificare i prezzi dei vini
 
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
 
+  
 Package|Classi
 -------|------
 Model|UsaApi;
@@ -60,7 +61,7 @@ Ristorante|Tavolo;  Piatto; <br>Menù;  Sala;
 OtherClass|Eventi;  Previsioni;  Prezzo; <br>Chalet;  PrenotazionePosto;  Prenotazione;
 Server|Server;  Account;
 Controller|Controller;
-  
+
      
 - ## Sequence Diagram
   > Diagramma delle sequenze utile a definire il funzionamento delle chiamate web utilizzate tramite Postman
@@ -71,7 +72,13 @@ Controller|Controller;
   - ### Proprietario
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/diagramma%20delle%20sequenze%20Proprietario.jpg" width="600" height="400" ></div>
 
+***
+## API utilizzati
 
+Nome|Url|Descrizione
+----|--|----
+openweathermap|http://api.openweathermap.org/data/2.5/forecast?id=6540261&appid=fab715b1276e37b8c17a87274e509451|Utilizzato per l'acquisizione del meteo in tempo reale
+spoonacular|https://api.spoonacular.com/food/wine/recommendation?wine=merlot&number=10&apiKey=62f8d2a4877f45d29f4f00d66818c72e|Utilizzato per l'acquisizione dei vini
 *** 
 
 La classe Prenotazione chiede in ingresso un intero che per gli oggetti che sono prenotabili da una sola persona è fissato a uno mentre, per gli eventi, il valore dipende dalla dimensione del vettore prenotazioni proprio dell'oggetto "Evento" stesso.
