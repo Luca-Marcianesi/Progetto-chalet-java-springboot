@@ -120,13 +120,18 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	public String toString () {
 		String spiaggia = "";
 		int i = 0;
+		boolean prec = true;
 		for(Ombrellone ombr : lista) {
 			if (i == colonne) {
 				spiaggia += "\n";
 				i = 0;
 			}
-			if (ombr.getPosizione()<=10 && i!=0) spiaggia += "\t";
+			if (ombr.getPosizione()<=10 && i!=0 && !prec) {
+				spiaggia += "\t";
+				prec = true;
+			}
 			spiaggia += ombr.toString();
+			if (ombr.getStato()) prec = false;
 			i++;
 		}
 		return spiaggia;
