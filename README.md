@@ -13,10 +13,13 @@ TIPO |ROTTA|DESCRIZIONE
 ------ | ------|----------
 POST|/creaAccount|Crea un account personale inserendo username e password
 POST|/login|Accedi al tuo account inserendo username e password
+POST|/logout|Disconnette il proprio account
 GET|/previsioni|Visualizza le condizioni metereologiche
 POST|/prenota|Ti permette di prenotare eventi, tavoli o attrezzature per la balneazione inserendo la richiesta e il nome a cui intestare la prenotazione
 POST|/prenotaOmbrellone|Per prenotare un posto ombrellone inserendo il posto e il nome a cui intestare la prenotazione
 GET|/vini|Restituisce la lista dei vini
+GET|/visualizzaEventi|Visualizza l'elenco dei prossimi eventi
+GET|/visualizzaSpiaggia|Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
 
 ## Chiamate Postman Proprietario
 
@@ -54,3 +57,5 @@ POST|/cambiaVino|Permette di modificare i prezzi dei vini
 
 
 *** 
+
+La classe Prenotazione chiede in ingresso un intero che per gli oggetti che sono prenotabili da una sola persona è fissato a uno mentre, per gli eventi, il valore dipende dalla dimensione del vettore prenotazioni proprio dell'oggetto "Evento" stesso.
