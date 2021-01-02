@@ -15,6 +15,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 import org.json.simple.parser.ParseException;
+import java.lang.ClassCastException;
 import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
 import ProgettoOOP.chalet.Model.Ristorante.Piatto;
 
@@ -68,6 +69,8 @@ public class UsaApi {
 		Previsioni previsione = new Previsioni();
 				
 		JSONObject oggettoLista = (JSONObject) list.get(i);	
+		
+		try {
 			
 		previsione.setData((long) oggettoLista.get("dt"));
 			
@@ -78,6 +81,10 @@ public class UsaApi {
 		JSONObject main = (JSONObject) oggettoLista.get("main");
 			
 		previsione.setTemperatura((double) main.get("temp")); 
+		}
+		catch(ClassCastException e) {
+			return null;	
+		}
 			
 		JSONArray weather = (JSONArray) oggettoLista.get("weather");
 			
@@ -130,12 +137,15 @@ public class UsaApi {
 	
 	/**
 	 * Valorizza l'oggetto previsione per un dato giono prendendo i parametri
-	 * data,nome cittÃƒÂ ,Condizioni Principali(main) e temperatura
-	 * @param giorno Oggetto che contiene la data delle previsioni da ceracare
-	 * @return restituisce l'oggetto previsione corrispondente...se non trova il giorno nella lista
-	 * restituisce un oggetto con il parametro "principale" contenente : "Previsioni non disponibili"
+	 * data,nome città ,Condizioni Principali(main) e temperatura
+	 * @param data Oggetto che contiene la data delle previsioni da ceracare
+	 * @return restituisce l'oggetto previsione corrispondente...se non trova il
+	 *  giorno nella lista restituisce un oggetto con il parametro "principale" 
+	 *  contenente : "Previsioni non disponibili"
+	 *  Può generare due eccezzioni ClassCastException se è sbagliato il casting
+	 *  dei dati  NullPointerException se l'oggetto data è nullo
 	 */
-	public Previsioni valorizzaPrevisione(LocalDate giorno) {
+	public Previsioni valorizzaPrevisione(LocalDate data) {
 			
 		JSONObject obj = this.leggiApi(this.urlMeteo) ;
 		Previsioni previsione = new Previsioni();
@@ -152,12 +162,13 @@ public class UsaApi {
 		for(int i = 0; i < scansioniTotali ; i+=scansioniGiornaliere) {	
 					
 				JSONObject oggettoLista = (JSONObject) list.get(i);	
+				try {
+					
+					long epochDay = (long) oggettoLista.get("dt");
 				
-				long epochDay = (long) oggettoLista.get("dt");
-				
-				LocalDate controlla = Instant.ofEpochSecond(epochDay).atZone(ZoneId.systemDefault()).toLocalDate();
-				try{
-					if(giorno.getDayOfYear() == controlla.getDayOfYear()) {
+					LocalDate controlla = Instant.ofEpochSecond(epochDay).atZone(ZoneId.systemDefault()).toLocalDate();
+					
+					if(data.getDayOfYear() == controlla.getDayOfYear()) {
 				
 						previsione.setData(epochDay);
 				
@@ -168,7 +179,7 @@ public class UsaApi {
 						JSONObject main = (JSONObject) oggettoLista.get("main");
 								
 						previsione.setTemperatura((double) main.get("temp")); 
-				
+					
 						JSONArray weather = (JSONArray) oggettoLista.get("weather");
 				
 						JSONObject obj2 = (JSONObject) weather.get(0) ;
@@ -178,7 +189,7 @@ public class UsaApi {
 						return previsione;
 					}
 				}
-				catch(NullPointerException e){
+				catch(ClassCastException | NullPointerException e) {
 					previsione.setCondizioni("Previsioni non disponibili");
 					return previsione;
 				}

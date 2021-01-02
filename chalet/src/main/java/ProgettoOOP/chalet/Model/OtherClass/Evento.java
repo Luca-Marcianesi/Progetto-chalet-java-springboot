@@ -172,7 +172,12 @@ public class Evento implements OggettoPrenotabile {
 	 */
 	private void setPrevisioni() {
 		UsaApi api = new UsaApi();
+		try {
 		this.previsione = api.valorizzaPrevisione(this.data);
+		}
+		catch(NullPointerException e) {
+			this.previsione.setCondizioni("Previsioni non disponibili");
+		}
 		}
 	
 }
