@@ -4,7 +4,7 @@
 > Effettuando l'accesso come Cliente con il proprio account si ha la possibilità di prenotare: eventi, posti ombrelloni, tavoli e carta dei vini per il ristorante.
 > Inoltre si può consultare semplicemente le condizioni metereologiche o la situazione della spiaggia.
 > L'account "Proprietario", oltre a poter utilizzare le stesse operazioni del "Cliente", ha accesso a funzioni specifiche per la gestione del proprio chalet.
-> Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080.
+> Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080".
 ***
 ## Path da utilizzare per il profilo Cliente e Proprietario
 
