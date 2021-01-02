@@ -32,12 +32,17 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	 */
 	private HashSet <PrenotazionePosto> listaPrenotazioni= new HashSet <PrenotazionePosto>();
 	/*
+	 * numero di colonne di una spiaggia di ombrelloni
+	 */
+	private int colonne;
+	/*
 	 * Costruttore che calcola il numero totale di ombrelloni,
-	 * aggiunge oggetti alla lista.
+	 * aggiunge oggetti al vector.
 	 * @param righe di ombrelloni nella spiaggia
 	 * @param colonne di ombrelloni nella spiaggia
 	 */
 	public ListaOmbrelloni(int righe, int colonne){
+		this.colonne = colonne;
 		this.max = colonne * righe;						
 		for (int p = 0; p<this.max; p++) {
 				Ombrellone o = new Ombrellone();
@@ -96,10 +101,12 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		return false;
 		}
 	/*
-	 * Reimposta lo stato della prenotazione dei singoli ombrelloni
+	 * Elimina il contenuto del Vector lista, listaPrenotazioni e l'attributo ultimaPosizione della classe Ombrellone
 	 */
-	public void Reset() {
-		for(Ombrellone ombrellone : lista) ombrellone.setStato(true);
+	public void reset() {
+		Ombrellone.resetUltimaPosizione();
+		this.lista.clear();
+		this.listaPrenotazioni.clear();
 		}
 	/*
 	 * @return ritorna l'HashSet delle prenotazioni
@@ -108,14 +115,32 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		return this.listaPrenotazioni;
 	}
 	/*
+	 * @return restituisce una stringa che rappresenta la posizione degli ombrelloni in una spiaggia
+	 */
+	public String toString () {
+		String spiaggia = "";
+		int i = 0;
+		for(Ombrellone ombr : lista) {
+			if (i == colonne) {
+				spiaggia += "\n";
+				i = 0;
+			}
+			if (ombr.getPosizione()<=10 && i!=0) spiaggia += "\t";
+			spiaggia += ombr.toString();
+			i++;
+		}
+		return spiaggia;
+		
+	}
+	/*
 	 * Metodo che gestisce l'ordini delle prenotazioni
 	 * @param nome rappresenta il nome della persona che ha prenotato
 	 * @param posto rappresenta la posizione dell'ombrellone nella spiaggia
 	 */
-	private void aggiungiPrenotazione(String nome , int posto) {
+	private void aggiungiPrenotazione(String nome, int posto) {
 			PrenotazionePosto prenotazione = new PrenotazionePosto(nome,this.listaPrenotazioni.size()+1, posto);
 			this.listaPrenotazioni.add(prenotazione);
-		}
+	}
 	/*
 	 * Metodo che imposta le condizioni meteo al tempo attuale
 	*/
@@ -124,7 +149,5 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		LocalDate oggi = Instant.ofEpochSecond(System.currentTimeMillis()).atZone(ZoneId.systemDefault()).toLocalDate();
 		this.previsione = api.valorizzaPrevisione(oggi);
 		}
-	
-	
-	
+
 }

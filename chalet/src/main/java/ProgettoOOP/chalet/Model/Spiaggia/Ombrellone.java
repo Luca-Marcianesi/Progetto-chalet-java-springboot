@@ -89,4 +89,10 @@ public class Ombrellone implements OggettoPrenotabile{
 		else return ("\t["+ this.posizione + "X"+"]");
 		
 	} 
+	/*
+	 * Resetta l'attributo ultimaPosizione al valore iniziale
+	 */
+	public static void resetUltimaPosizione() {
+		Ombrellone.ultimaPosizione = 1;
+	}
 }
