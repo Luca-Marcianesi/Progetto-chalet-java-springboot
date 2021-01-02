@@ -237,9 +237,4 @@ public class Controller {
 	/*
 	 * @return restituisce le informazioni meteo principali
 	 */
-	@GetMapping("/informazioni")
-	public Informazioni test16 (){
-		return this.chalet.listaInfo;
-		
-	}
 }
