@@ -81,7 +81,7 @@ public class Piatto   implements  OggettoConValore {
 	 *Trasforma il piatto in una string
 	 */
 	public String toString() {
-		return (  this.codice + this.descrizione + " " + this.prezzo.getPrezzo() + "Ã¢â€šÂ¬" );
+		return (  this.codice + this.descrizione + " " + this.prezzo.getPrezzo() + "euro" );
 	}
 }
 
