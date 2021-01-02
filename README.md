@@ -34,7 +34,7 @@ POST|/cambiaVino|Permette di modificare i prezzi dei vini
 - ## Use Case Diagram
   
   - ### Cliente
-  
+    
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Cliente.jpg" width="500" height="500" ></div>
      
      
@@ -44,6 +44,18 @@ POST|/cambiaVino|Permette di modificare i prezzi dei vini
      
 - ## Use Class Diagram
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
+
+Package|Classi
+-------|------
+Model|UsaApi;
+Liste|Lista; <br>ListaOggettiPrenotabili;  ListaOggettiConValore;
+Informazioni|Informazioni;
+Interfacce|OggettoConValore;  OgettoPrenotabile
+Spiaggia|Attrezzatura;  <br>Ombrellone;  ListaOmbrelloni;
+Ristorante|Tavolo;  Piatto; <br>Menù;  Sala;
+OtherClass|Eventi;  Previsioni;  Prezzo; <br>Chalet;  PrenotazionePosto;  Prenotazione;
+Server|Server;  Account;
+Controller|Controller;
   
      
 - ## Sequence Diagram
