@@ -8,9 +8,12 @@ import java.time.DateTimeException;
 import java.lang.NumberFormatException;
 import java.util.*;
 import ProgettoOOP.chalet.Model.Ristorante.Piatto;
+import ProgettoOOP.chalet.Model.Ristorante.Tavolo;
 import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
+import ProgettoOOP.chalet.Model.Liste.ListaOggettiPrenotabili;
 import ProgettoOOP.chalet.Model.OtherClass.*;
 import ProgettoOOP.chalet.Model.Server.Server;
+import ProgettoOOP.chalet.Model.Spiaggia.*;
 //import ProgettoOPP.chalet.Model.Eccezioni.*;
 
 
@@ -205,8 +208,43 @@ public class Controller {
 		if(prezzo<0)return("Prezzo non consentito");
 		this.chalet.menuVini.setPrezzo(codice, prezzo);
 		return ("Vino aggiornato");
-			
 		}
+	/*
+	 * @return restituisce tutte le informazioni più importanti dei futuri eventi eventi
+	 */
+	@GetMapping("/visualizzaEventi")
+	public ListaOggettiPrenotabili<Evento> test12 (){
+		return this.chalet.listaEventi;
+	}
+	/*
+	 * @return restituisce le informazioni più importanti della sala ristorante
+	 */
+	@GetMapping("/visualizzaTavoli")
+	public ListaOggettiPrenotabili<Tavolo> test13 (){
+		return this.chalet.listaTavoli;
+	}
+	/*
+	 * @return restituisce i dati utili delle attrezzature disponibili
+	 */
+	@GetMapping("/visualizzaAttrezzatura")
+	public ListaOggettiPrenotabili<Attrezzatura> test14 (){
+		return this.chalet.listaAttrezzatura;
+	}
+	/*
+	 * @return restituisce graficcamente la rappresentazione degli ombrelloni in una spiaggia
+	 */
+	@GetMapping("/visualizzaSpiaggia")
+	public String test15 (){
+		return this.chalet.listaOmbrelloni.toString();
+	}
+	/*
+	 * @return restituisce le informazioni meteo principali
+	 */
+	/*@GetMapping("/informazioni")
+	public Informazioni test16 (){
+		return this.chalet.listaInfo;
+		
+	}*/
 }
 	
 	
