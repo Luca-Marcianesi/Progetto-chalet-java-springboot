@@ -51,20 +51,24 @@ public class Chalet {
 	
 	
 	/**
-	 * Permette di creare la spiaggia
+	 * Permette di creare la spiaggia se esiste già la resetta
 	 * @param riga numero di righe
 	 * @param colonna numero di colonne
 	 */
 	public void creaSpiaggia (int riga, int colonna) {
-		this.listaOmbrelloni.reset();
+		if(this.listaOmbrelloni != null) this.listaOmbrelloni.reset();
 		this.listaOmbrelloni = new ListaOmbrelloni(riga, colonna);
 	}
 	
+	/**
+	 * Costruttore che aggiunge il proprietario ed alcuni oggetti 
+	 * allo chalet
+	 */
 	public Chalet() {
 		this.server.aggiungiAccount(proprietario);
-		//this.listaTavoli.aggiungi(new Tavolo(4));
-		//this.listaTavoli.aggiungi(new Tavolo(6));
-		//this.listaTavoli.aggiungi(new Tavolo(3));
+		this.listaTavoli.aggiungi(new Tavolo(4));
+		this.listaTavoli.aggiungi(new Tavolo(6));
+		this.listaTavoli.aggiungi(new Tavolo(3));
 	}
 	
 	/**
