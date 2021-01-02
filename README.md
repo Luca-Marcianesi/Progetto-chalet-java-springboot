@@ -1,9 +1,9 @@
 # Progetto-Chalet
 
-> "Progetto-Chalet" è un programma si occupa della gestione di uno stabilimento balneare dal punto di vista del Cliente e del Proprietario.
-> Effettuando l'accesso come cliente con il proprio account si ha la possibilità di prenotare: eventi, posti ombrelloni, tavoli per il ristorante oppure
-> consultare semplicemente le condizioni metereologiche o la situazione della spiaggia.
-> L'account "Proprietario" oltre a poter utilizzare le stesse operazioni del "Cliente" ha accesso a funzioni specifiche per la gestione del proprio chalet.
+> "Progetto-Chalet" è un programma che si occupa della gestione di uno stabilimento balneare dal punto di vista del Cliente e del Proprietario.
+> Effettuando l'accesso come cliente con il proprio account si ha la possibilità di prenotare: eventi, posti ombrelloni, tavoli e carta dei vini per il ristorante.
+> Inoltre si può consultare semplicemente le condizioni metereologiche o la situazione della spiaggia.
+> L'account "Proprietario", oltre a poter utilizzare le stesse operazioni del "Cliente", ha accesso a funzioni specifiche per la gestione del proprio chalet.
 
 ***
 
