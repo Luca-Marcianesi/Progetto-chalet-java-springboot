@@ -32,17 +32,21 @@ GET|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
 POST|/cambiaVino|Permette di modificare i prezzi dei vini
 
 - ## Use Case Diagram
-  
+  > Casi d'uso utilizzati per la modellazione del progetto, suddivisi in due attori principali
   - ### Cliente
+    > Casi d'uso del profilo Cliente ma accessibili anche a Proprietario
     
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Cliente.jpg" width="500" height="500" ></div>
      
-     
   - ### Proprietario
+    > Casi d'uso esclusivi del profilo Proprietario
+    
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Proprietario.jpg" width="500" height="500" ></div>
 
      
 - ## Use Class Diagram
+  > Uso delle classi utilizzato per l'impostazione del progetto 
+
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
 
 Package|Classi
@@ -59,7 +63,7 @@ Controller|Controller;
   
      
 - ## Sequence Diagram
-
+  > Diagramma delle sequenze utile a definire il funzionamento delle chiamate web utilizzate tramite Postman
   - ### Cliente
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Diagramma%20delle%20sequenze%20Cliente.jpg" width="600" height="400" ></div>
   
