@@ -210,7 +210,7 @@ public class Controller {
 	 * Effettua il logout dal sever chalet
 	 * @return ritorna il l'esito
 	 */
-	@PostMapping("/logout")
+	@GetMapping("/logout")
 	public String test12() {
 		if(!this.accesso) return ("Non sei loggato");
 		else {
