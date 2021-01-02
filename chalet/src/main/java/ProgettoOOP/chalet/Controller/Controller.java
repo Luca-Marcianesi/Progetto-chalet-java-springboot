@@ -5,15 +5,12 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PostMapping;
 import java.time.DateTimeException;
-import java.lang.NumberFormatException;
 import java.util.*;
 import ProgettoOOP.chalet.Model.Ristorante.Piatto;
-import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
+import ProgettoOOP.chalet.Model.Liste.*;
 import ProgettoOOP.chalet.Model.OtherClass.*;
 import ProgettoOOP.chalet.Model.Server.Server;
-//import ProgettoOPP.chalet.Model.Eccezioni.*;
-
-
+import ProgettoOOP.chalet.Model.Eccezioni.*;
 /**
  * @author LucaMarcianesi
  * Classe che gestisce le chiamate postman e risponde 
@@ -83,7 +80,7 @@ public class Controller {
 	
 	/**
 	 * Permette al proprietario di creare un evento e lo aggiunge alla lista degli eventi
-	 * Può generare un eccezione se la data non esiste
+	 * PuÃ² generare un eccezione se la data non esiste
 	 * @param nome Nome dell'evento
 	 * @param posti Posti disponibili
 	 * @param anno Anno in cui si svolge 
@@ -98,7 +95,7 @@ public class Controller {
 			@RequestParam(name = "anno",defaultValue = "2020")int anno, 
 			@RequestParam(name = "mese",defaultValue = "12")int mese,
 			@RequestParam(name = "giorno")int giorno,
-			@RequestParam(name = "prezzo")float prezzo) {
+			@RequestParam(name = "prezzo")float prezzo) throws DateTimeException{
 	if(this.chalet.proprietario(user)) {
 		Evento evento;
 		try {
@@ -122,7 +119,7 @@ public class Controller {
 	 * @throws NumberFormatException  se all'inserimento di cidice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/creaSpiaggia")
-	public String test5(@RequestParam(name = "righe",defaultValue = "10")int righe,@RequestParam(name = "colonne",defaultValue = "10")int colonne ) throws NumberFormatException {
+	public String test5(@RequestParam(name = "righe",defaultValue = "10")int righe,@RequestParam(name = "colonne",defaultValue = "10")int colonne ) {
 		
 		if(righe < 0 && colonne < 0)return ("Impossibile");
 		if(this.chalet.proprietario(this.user)) {
@@ -145,16 +142,16 @@ public class Controller {
 	/**
 	 * Permette all'utente di prenotare qualsiasi cosa a eccezione degli ombrelloni all'interno
 	 * dello chalet inserendo la cosa desiderata in richiesta
-	 * Controlla in ogni lista dello chalet se la richiesta è presente
+	 * Controlla in ogni lista dello chalet se la richiesta Ã¨ presente
 	 * @param richiesta Oggetto richiesto dall'utente
 	 * @param nome Nome dell'utente
-	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 è il valore di default
+	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 Ã¨ il valore di default
 	 * @return Esito della prenotaazione
 	 * @throws NumberFormatException
 	 */
 	@PostMapping("/prenota")
-	public String test7(@RequestParam(name = "richiesta")String richiesta,@RequestParam(name = "nome",defaultValue = "")String nome,@RequestParam(name = "posti",defaultValue = "1")int posti) throws NumberFormatException{
-		if(posti<1) return ("prenotazione non riuscita");
+	public String test7(@RequestParam(name = "richiesta")String richiesta,@RequestParam(name = "nome",defaultValue = "")String nome,@RequestParam(name = "posti",defaultValue = "1")int posti)throws EccezionePosto{
+		if(posti<1) throw new EccezionePosto();
 		if (this.accesso) nome = this.user;
 		if(chalet.listaAttrezzatura.prenota(richiesta, nome)) return ("prenotazione riuscita");
 		if(chalet.listaEventi.prenota(richiesta, nome)) return ("prenotazione riuscita");
@@ -171,7 +168,9 @@ public class Controller {
 	 * @throws NumberFormatException Se all'inserimento di cidice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/prenotaOmbrellone")
-	public String test8(@RequestParam(name = "posto" )int posto,@RequestParam(name = "nome",defaultValue = "")String nome) throws NumberFormatException {
+	public String test8(@RequestParam(name = "posto" )int posto,@RequestParam(name = "nome",defaultValue = "")String nome) throws EccezionePosto,EccezioneSpiaggia  {
+		if(this.chalet.listaOmbrelloni == null) throw new EccezioneSpiaggia();
+		if(posto<1)throw new EccezionePosto();
 		if (this.accesso) nome = this.user;
 		if(chalet.listaOmbrelloni.prenota(posto, nome)) return ("prenotazione riuscita");
 		return ("prenotazione non riuscita");	
@@ -201,27 +200,46 @@ public class Controller {
 	 * @throws NumberFormatException se all'inserimento di cidice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/cambiaVino")
-	public String test11(@RequestParam(name = "codice")int codice,@RequestParam(name = "prezzo")float prezzo) throws NumberFormatException{
-		if(prezzo<0)return("Prezzo non consentito");
+	public String test11(@RequestParam(name = "codice")int codice,@RequestParam(name = "prezzo")float prezzo) throws EccezionePrezzo {
+		if(prezzo<0) throw new EccezionePrezzo();
 		this.chalet.menuVini.setPrezzo(codice, prezzo);
-		return ("Vino aggiornato");
-			
+		return ("Vino aggiornato");	
 		}
+	
+	/**
+	 * Effettua il logout dal sever chalet
+	 * @return ritorna il l'esito
+	 */
+	@PostMapping("/logout")
+	public String test12() {
+		if(!this.accesso) return ("Non sei loggato");
+		else {
+			this.accesso = false;
+			this.user = "";
+			return ("Uscito con successo");
+			}	
+		}
+	/*
+	 * @return restituisce tutte le informazioni più importanti dei futuri eventi eventi
+	 */
+	@GetMapping("/visualizzaEventi")
+	public ListaOggettiPrenotabili<Evento> test13(){
+		return this.chalet.listaEventi;
+	}
+	
+	/*
+	 * @return restituisce graficcamente la rappresentazione degli ombrelloni in una spiaggia
+	 */
+	@GetMapping("/visualizzaSpiaggia")
+	public String test15 (){
+		return this.chalet.listaOmbrelloni.toString();
+	}
+	/*
+	 * @return restituisce le informazioni meteo principali
+	 */
+	@GetMapping("/informazioni")
+	public Informazioni test16 (){
+		return this.chalet.listaInfo;
+		
+	}
 }
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-	
-	
-
-	
-	
-
-
