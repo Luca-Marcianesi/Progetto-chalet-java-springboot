@@ -233,12 +233,4 @@ public class Controller {
 	public String test15 (){
 		return this.chalet.listaOmbrelloni.toString();
 	}
-	/*
-	 * @return restituisce le informazioni meteo principali
-	 */
-	@GetMapping("/informazioni")
-	public Informazioni test16 (){
-		return this.chalet.listaInfo;
-		
-	}
 }
