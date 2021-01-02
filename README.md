@@ -9,31 +9,35 @@
 ***
 ## Path da utilizzare per il profilo Cliente e Proprietario
 
-TIPO |ROTTA|DESCRIZIONE
------- | ------|----------
-POST|/creaAccount|Crea un account personale inserendo username e password
-POST|/login|Accedi al tuo account inserendo username e password
-POST|/logout|Disconnette il proprio account
-GET|/previsioni|Visualizza le condizioni metereologiche
-POST|/prenota|Ti permette di prenotare eventi, tavoli o attrezzature per la balneazione inserendo la richiesta e il nome a cui intestare la prenotazione
-POST|/prenotaOmbrellone|Per prenotare un posto ombrellone inserendo il posto e il nome a cui intestare la prenotazione
-GET|/vini|Restituisce la lista dei vini
-GET|/visualizzaEventi|Visualizza l'elenco dei prossimi eventi
-GET|/visualizzaSpiaggia|Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
+TIPO |ROTTA|INPUT|DESCRIZIONE
+------ | ---|----|----------
+POST|/creaAccount|"user" <br> "pass"|Crea un account personale inserendo username e password
+POST|/login|"user" <br> "pass"|Accedi al tuo account inserendo username e password
+GET|/logout| |Disconnette il proprio account
+GET|/previsioni| |Visualizza le condizioni metereologiche
+POST|/prenota|"richiesta" <br> "nome"|Ti permette di prenotare eventi, tavoli o attrezzature per la balneazione inserendo la richiesta e il nome a cui intestare la prenotazione
+POST|/prenotaOmbrellone|"posto" <br> "nome"|Per prenotare un posto ombrellone inserendo il posto e il nome a cui intestare la prenotazione
+GET|/vini| |Restituisce la lista dei vini
+GET|/visualizzaEventi| |Visualizza l'elenco dei prossimi eventi
+GET|/visualizzaSpiaggia| |Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
 
-### Esempio
+### Esempio di una prenotazione del posto ombrellone
+<div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Esempio%20Postman%20Cliente.png" ></div>
+
 ***
 ## Path da utilizzare per il profilo Proprietario
 
-TIPO |ROTTA|DESCRIZIONE
------- | ------|----------
-POST|/listaAccount|Visualizza a schermo tutti gli account presenti nel server
-POST|/creaEvento|Creare gli eventi inserendo la descrizione e l'orario
-POST|/creaSpiaggia|Creazione di una spiaggia inserendo le righe e le colonne degli ombrelloni
-GET|/chalet|Visualizza a schermo tutte le informazioni utili dello chalet
-POST|/cambiaVino|Permette di modificare i prezzi dei vini
+TIPO |ROTTA|INPUT|DESCRIZIONE
+------ | --|------|----------
+GET|/listaAccount| |Visualizza a schermo tutti gli account presenti nel server
+POST|/creaEvento|"nome" "posti" "anno" <br> "mese" "giorno" "prezzo"|Creare gli eventi inserendo la descrizione e l'orario
+POST|/creaSpiaggia|"righe" "colonne"|Creazione di una spiaggia inserendo le righe e le colonne degli ombrelloni
+GET|/chalet| |Visualizza a schermo tutte le informazioni utili dello chalet
+POST|/cambiaVino|"codice" "prezzo"|Permette di modificare i prezzi dei vini
 
-### Esempio
+### Esempio di login del prorpietario con le credenziali di default
+<div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Esempio%20Postman%20Proprietario.png"" ></div>
+
 ***
 - ## Use Case Diagram
   > Casi d'uso utilizzati per la modellazione del progetto, suddivisi in due attori principali
