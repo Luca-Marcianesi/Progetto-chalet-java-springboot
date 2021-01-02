@@ -4,7 +4,8 @@
 > Effettuando l'accesso come Cliente con il proprio account si ha la possibilità di prenotare: eventi, posti ombrelloni, tavoli e carta dei vini per il ristorante.
 > Inoltre si può consultare semplicemente le condizioni metereologiche o la situazione della spiaggia.
 > L'account "Proprietario", oltre a poter utilizzare le stesse operazioni del "Cliente", ha accesso a funzioni specifiche per la gestione del proprio chalet.
-> Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080".
+> Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080". 
+> Di seguito sono elencate le rotte inserire dopo la porta locale.
 ***
 ## Path da utilizzare per il profilo Cliente e Proprietario
 
@@ -82,5 +83,12 @@ Nome|Url|Descrizione
 ----|--|----
 openweathermap|http://api.openweathermap.org/data/2.5/forecast?id=6540261&appid=fab715b1276e37b8c17a87274e509451|Utilizzato per l'acquisizione del meteo in tempo reale
 spoonacular|https://api.spoonacular.com/food/wine/recommendation?wine=merlot&number=10&apiKey=62f8d2a4877f45d29f4f00d66818c72e|Utilizzato per l'acquisizione dei vini
+
+***
+## Tool e Librerie da istallare:
+* [JSON simple](https://code.google.com/archive/p/json-simple/)
+* [Spring Inizializr](https://start.spring.io/)
+* [Spring Tool 4](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4?mpc=true&mpc_state=)
+
 ***
 La classe Prenotazione chiede in ingresso un intero che per gli oggetti che sono prenotabili da una sola persona è fissato a uno mentre, per gli eventi, il valore dipende dalla dimensione del vettore prenotazioni proprio dell'oggetto "Evento" stesso.
