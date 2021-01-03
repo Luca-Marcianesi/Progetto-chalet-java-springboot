@@ -49,7 +49,7 @@ public class Account  {
 	 * Modifica l'username
 	 * @param password password dell'account
 	 * @param nuovoUsername nuovo username
-	 * @return se l username è stato cambiato true altrimenti false
+	 * @return true se l' username è stato cambiato, altrimenti false
 	 */
 	public boolean modificaUsername(String password, String nuovoUsername) {
 		if (this.controllaPassword(password)) {
@@ -78,11 +78,5 @@ public class Account  {
 	 */
 	public String toString() {
 		return(	 "User: " + username + "\n");
-	}
-	
-
-	
-	
+	}	
 }
-
-
