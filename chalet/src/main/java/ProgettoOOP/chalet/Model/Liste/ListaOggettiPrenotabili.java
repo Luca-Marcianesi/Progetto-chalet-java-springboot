@@ -19,7 +19,7 @@ public class ListaOggettiPrenotabili<T extends OggettoPrenotabile>  extends List
 	 * Se lo trova ed è disponibile modifica lo stato dell'oggetto e aggiune la prenotazione all'oggetto
 	 * @param richiesta nome dell'oggetto
 	 * @param nome nome di chi fa la prenotazione
-	 * @return ritorna vero se la prenotazione ÃƒÂ¨ andata a buon fine altrimenti torna false
+	 * @return ritorna vero se la prenotazione è andata a buon fine altrimenti torna false
 	 */
 	public boolean prenota (String richiesta , String nome) {
 		for(T elemento : super.lista) {
