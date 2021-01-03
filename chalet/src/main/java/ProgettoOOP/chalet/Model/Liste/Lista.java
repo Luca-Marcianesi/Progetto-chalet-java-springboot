@@ -26,10 +26,10 @@ public class Lista<T> {
 	/**
 	 * Sostituisce l'oggetto in  una posizione con un nuovo elemento
 	 * @param posizione  posizione del oggetto da sostituire
-	 * @param nuovo_oggetto  
+	 * @param nuovoOggetto  il nuovo oggetto da inserire
 	 */
-	public void sostituisci(int posizione, T nuovo_oggetto) {
-		this.lista.set(posizione, nuovo_oggetto);
+	public void sostituisci(int posizione, T nuovoOggetto) {
+		this.lista.set(posizione, nuovoOggetto);
 	}
 
 	/**
