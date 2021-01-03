@@ -4,7 +4,7 @@ import ProgettoOOP.chalet.Model.Interfacce.OggettoPrenotabile;
 
 /**
  * @author Luca Marcianesi
- * Classe che estende la piÃƒÂ¹ generale lista e si occupa delle operazioni
+ * Classe che estende la super classe lista e si occupa delle operazioni
  * utili sulle liste di oggettoPrenotabile
  *
  * @param <T> generico oggetto oggettoPrenotabile
