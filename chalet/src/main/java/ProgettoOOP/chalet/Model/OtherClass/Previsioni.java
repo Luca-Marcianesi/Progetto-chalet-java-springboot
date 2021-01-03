@@ -140,7 +140,7 @@ public class Previsioni implements OggettoConValore{
 			 */
 			public String toString () {
 			 return ( "Nome città : " + this.nome + "\ndata: " + this.data + "\ntemperatura: " +  this.temperatura
-					 + " Ã‚Â°C\ncondizioni meteo: " + this.principale );	 
+					 + " °C\ncondizioni meteo: " + this.principale );	 
 		 }
 		
 	}
