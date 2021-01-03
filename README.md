@@ -6,6 +6,7 @@
 > L'account "Proprietario", oltre a poter utilizzare le stesse operazioni del "Cliente", ha accesso a funzioni specifiche per la gestione del proprio chalet.
 > Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080". 
 > Di seguito sono elencate le rotte che devono essere inserite dopo la porta appena menzionata, per eseguire le relative chiamate.
+> (Il codice del progetto è interamente in java e si trova dentro "chalet/src".)
 ***
 ## <div align="center"> Path da utilizzare per il profilo Cliente e Proprietario </div>
 
