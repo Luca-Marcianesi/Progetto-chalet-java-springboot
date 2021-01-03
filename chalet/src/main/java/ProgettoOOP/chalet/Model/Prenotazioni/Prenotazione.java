@@ -19,9 +19,9 @@ public class Prenotazione {
 	/**
 	 * Costruttore della classe
 	 * @param nome  Nome di chi prenota
-	 * @param numeroPrenotazione Numero della prenotazione.Per gli oggetti prenotabili
+	 * @param numeroPrenotazione Numero della prenotazione. Per gli oggetti prenotabili
 	 * da una sola persona (es Tavolo )fisso a 1 mentre per gli oggetti
-	 * prenotabili da molte per (es Evento ) variabile.
+	 * prenotabili da molte persone (es Evento ) è variabile.
 	 */
 	public Prenotazione (String nome,int numeroPrenotazione) {
 		this.nome = nome;
@@ -37,7 +37,7 @@ public class Prenotazione {
 	}
 	
 	/**
-	 * @return Ritorna il numero della prenotazione
+	 * @return Restituisce il numero della prenotazione
 	 */
 	public int getNumeroPrenotazione() {
 		return this.numeroPrenotazione;
