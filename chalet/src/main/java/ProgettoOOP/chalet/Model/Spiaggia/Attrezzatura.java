@@ -1,4 +1,5 @@
 package ProgettoOOP.chalet.Model.Spiaggia;
+
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
@@ -14,7 +15,7 @@ import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
  * attrezzature da prenotare.
  * Implementa l'interfaccia OggettoPrenotabile
  */
-public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
+	public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
 	/*
 	 * Descrizione della tipologia di attrezzatura
 	 */
@@ -76,6 +77,20 @@ public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
 	public String toString() {
 		return(this.tipo + " " + this.prezzo + " Stato: " + this.statoString());
 	}
+	
+	/*
+	 * @return restituisce il prezzo dell'oggetto
+	 */
+	public float getValore() {
+		return this.prezzo.getPrezzo();
+	}
+	
+	/*
+	 * @return restituisce l'oggetto prenotazione associato all'attrezzatura prenotata
+	*/
+	public Prenotazione getPrenotazione() {
+		return this.prenotazione;
+	}
 	/*
 	 * @return restituisce la stringa dell'esito della prenotazione
 	 */
@@ -84,7 +99,8 @@ public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
 		else return ("prenotato");
 	}
 	/*
-	 * @return restituisce le previsioni metereologiche del giorno attuale
+	 * @return restituisce true se le condizioni metereologiche di oggi permettono una 
+	 * prenotazione. Altrimenti restituisce false.
 	*/
 	private boolean previsioni() {
 		UsaApi api = new UsaApi();
@@ -93,20 +109,4 @@ public class Attrezzatura implements OggettoPrenotabile , OggettoConValore{
 		previsione = api.valorizzaPrevisione(oggi);
 		return previsione.getCondizioni();
 		}
-	/*
-	 * @return restituisce il prezzo dell'oggetto
-	 */
-	public float getValore() {
-		return this.prezzo.getPrezzo();
-	}
-	/*
-	 * @return restituisce l'oggetto prenotazione associato all'attrezzatura prenotata
-	*/
-	public Prenotazione getPrenotazione() {
-		return this.prenotazione;
-	}
-	
-	
-	
-	
 }
