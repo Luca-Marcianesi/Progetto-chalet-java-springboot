@@ -161,7 +161,7 @@ public class Evento implements OggettoPrenotabile {
 	
 	/**
 	 * Restituisce il prezzo dell'evento
-	 * @return float il prezzo del evento
+	 * @return float il prezzo dell' evento
 	 */
 	public float getValore() {
 		return this.prezzo.getPrezzo();
