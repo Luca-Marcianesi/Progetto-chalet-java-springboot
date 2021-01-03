@@ -40,7 +40,7 @@ public class Server {
 	 * @param password String  con la password del nuovo account
 	 * @return boolean true se l'account è stato creato con successo false altrimenti
 	 */
-	public boolean Crea_Account (String username , String password) {
+	public boolean creaAccount (String username , String password) {
 		if (!this.controlla(username)){
 			Account nuovo = new Account(username , password);
 				this.lista.add(nuovo);
