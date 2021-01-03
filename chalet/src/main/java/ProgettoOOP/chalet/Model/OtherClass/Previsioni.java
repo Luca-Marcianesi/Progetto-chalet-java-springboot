@@ -8,13 +8,13 @@ import ProgettoOOP.chalet.Model.Interfacce.OggettoConValore;
 /**
  * @author LucaMarcianesi
  * @author EdoardoTarulli
- * Classe che gestisce le previsioni meteorologiche du un giorno
+ * Classe che gestisce le previsioni meteorologiche di un giorno
  *
  */
 public class Previsioni implements OggettoConValore{
 		
 		 /**
-		 * String che contiene il nome della cittÃƒÂ 
+		 * String che contiene il nome della città
 		 */
 		private String nome;
 		 
