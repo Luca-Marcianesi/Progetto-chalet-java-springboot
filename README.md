@@ -120,4 +120,12 @@ spoonacular|https://api.spoonacular.com/food/wine/recommendation?wine=merlot&num
 * [Maven Integration for Eclipse](https://marketplace.eclipse.org/content/maven-integration-eclipse-luna-and-newer?mpc=true&mpc_state=)
 
 ***
+## Note:
 La classe Prenotazione chiede in ingresso un intero che per gli oggetti che sono prenotabili da una sola persona è fissato a uno mentre, per gli eventi, il valore dipende dalla dimensione del vettore prenotazioni proprio dell'oggetto "Evento" stesso.
+***
+
+Programmatore | E-mail | Contributo
+--------------|--------|-----------
+Luca Marcianesi|s1093754@studenti.univpm.it| <div align="center"> 43% </div>
+Diego Mignani|s1093616@studenti.univpm.it| <div align="center"> 32% </div>
+Edoardo Tarulli|s1094923@studenti.univpmit| <div align="center"> 25% </div>
