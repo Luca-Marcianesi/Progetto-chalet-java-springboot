@@ -55,9 +55,7 @@ POST|/cambiaVino|"codice" "prezzo"|Permette di modificare i prezzi dei vini
 - ## Use Class Diagram
   > Uso delle classi utilizzato per l'impostazione del progetto 
 
-  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
 
-  
 Package|Classi
 -------|------
 Model|UsaApi;
@@ -70,7 +68,9 @@ OtherClass|Eventi;  Previsioni;  Prezzo; <br>Chalet;  PrenotazionePosto;  Prenot
 Server|Server;  Account;
 Controller|Controller;
 
-     
+
+  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
+  
 - ## Sequence Diagram
   > Diagramma delle sequenze utile a definire il funzionamento delle chiamate web utilizzate tramite Postman
   - ### Cliente
