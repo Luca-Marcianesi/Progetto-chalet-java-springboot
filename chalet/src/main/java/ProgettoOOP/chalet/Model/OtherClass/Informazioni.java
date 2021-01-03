@@ -10,7 +10,7 @@ import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
 public   class Informazioni {
 	
 	/**
-	 * Lista che contiene le previsioni per fate la media
+	 * Lista che contiene le previsioni per fare la media
 	 */
 	private ListaOggettiConValore<Previsioni> listaPrevisioni = new ListaOggettiConValore<Previsioni>();
 	/**
