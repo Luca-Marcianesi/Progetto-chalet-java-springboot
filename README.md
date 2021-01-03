@@ -81,7 +81,7 @@ Controller|Controller;
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/diagramma%20delle%20sequenze%20Proprietario.jpg" width="600" height="400" ></div>
 
 ***
-## API utilizzati
+## <div align="center">API utilizzati<div align="center">
 
 Nome|Url|Descrizione
 ----|--|----
