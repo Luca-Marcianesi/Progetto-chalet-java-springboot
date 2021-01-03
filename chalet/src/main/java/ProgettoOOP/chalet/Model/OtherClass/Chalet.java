@@ -7,6 +7,11 @@ import ProgettoOOP.chalet.Model.Ristorante.*;
 import ProgettoOOP.chalet.Model.Spiaggia.Attrezzatura;
 
 
+/**
+ * @author LucaMarcianesi
+ *Classe che contiene tutte le liste,il server e l'account del proprietario
+ *relativi allo chalet
+ */
 public class Chalet {
 	
 	/**
@@ -69,12 +74,15 @@ public class Chalet {
 		this.listaTavoli.aggiungi(new Tavolo(4));
 		this.listaTavoli.aggiungi(new Tavolo(6));
 		this.listaTavoli.aggiungi(new Tavolo(3));
+		this.listaAttrezzatura.aggiungi(new Attrezzatura("pedalo",10));
+		this.listaAttrezzatura.aggiungi(new Attrezzatura("canoa",7));
+		this.listaEventi.aggiungi(new Evento("Techno",50,2021,1,25,30));
 	}
 	
 	/**
-	 * Metedo che confronta username con quello del proprietario
+	 * Metedo che confronta username con quello del proprietarioe
 	 * @param user username da confrontare
-	 * @return ritorna true se l'user è quello del propietario altrimenti false
+	 * @return ritorna true se l'user è quello del prop altrimenti false
 	 */
 	public boolean proprietario(String user) {
 		if( user.equalsIgnoreCase(this.proprietario.getUsername())) return true;
