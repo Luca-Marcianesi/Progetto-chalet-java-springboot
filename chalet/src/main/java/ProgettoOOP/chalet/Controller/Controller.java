@@ -12,7 +12,7 @@ import ProgettoOOP.chalet.Model.OtherClass.*;
 import ProgettoOOP.chalet.Model.Server.Server;
 import ProgettoOOP.chalet.Model.Eccezioni.*;
 /**
- * @author LucaMarcianesi
+ * @author Luca Marcianesi
  * Classe che gestisce le chiamate postman e risponde 
  *
  */
