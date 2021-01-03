@@ -54,22 +54,20 @@ POST|/cambiaVino|"codice" "prezzo"|Permette di modificare i prezzi dei vini
      
 - ## Use Class Diagram
   > Uso delle classi utilizzato per l'impostazione del progetto 
-
-
-Package|Classi
--------|------
-Model|UsaApi;
-Liste|Lista; <br>ListaOggettiPrenotabili;  ListaOggettiConValore;
-Informazioni|Informazioni;
-Interfacce|OggettoConValore;  OgettoPrenotabile
-Spiaggia|Attrezzatura;  <br>Ombrellone;  ListaOmbrelloni;
-Ristorante|Tavolo;  Piatto; <br>Menù;  Sala;
-OtherClass|Eventi;  Previsioni;  Prezzo; <br>Chalet;  PrenotazionePosto;  Prenotazione;
-Server|Server;  Account;
-Controller|Controller;
-
-
-  <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
+  
+    <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Uso%20delle%20classi%20Class%20Diagram.jpg" width="600" height="400" ></div>
+  
+    Package|Classi
+    -------|------
+    Model|UsaApi;
+    Liste|Lista; <br>ListaOggettiPrenotabili;  ListaOggettiConValore;
+    Informazioni|Informazioni;
+    Interfacce|OggettoConValore;  OgettoPrenotabile
+    Spiaggia|Attrezzatura;  <br>Ombrellone;  ListaOmbrelloni;
+    Ristorante|Tavolo;  Piatto; <br>Menù;  Sala;
+    OtherClass|Eventi;  Previsioni;  Prezzo; <br>Chalet;  PrenotazionePosto;  Prenotazione;
+    Server|Server;  Account;
+    Controller|Controller;
   
 - ## Sequence Diagram
   > Diagramma delle sequenze utile a definire il funzionamento delle chiamate web utilizzate tramite Postman
