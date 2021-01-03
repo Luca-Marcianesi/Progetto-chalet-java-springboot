@@ -4,8 +4,8 @@ import java.time.LocalDate;
 import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
 
 /**
- * @author Luca
- *
+ * @author LucaMarcianesi
+ *Gestisce le informaazioni dello chalet
  */
 public   class Informazioni {
 	
