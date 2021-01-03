@@ -145,7 +145,7 @@ public class Controller {
 	 * Controlla in ogni lista dello chalet se la richiesta è presente
 	 * @param richiesta Oggetto richiesto dall'utente
 	 * @param nome Nome dell'utente
-	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 Ã¨ il valore di default
+	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 è il valore di default
 	 * @return Esito della prenotazione
 	 * @throws NumberFormatException
 	 */
