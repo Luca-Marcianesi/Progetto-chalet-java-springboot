@@ -22,6 +22,8 @@ GET|/vini| |Restituisce la lista dei vini
 GET|/visualizzaEventi| |Visualizza l'elenco dei prossimi eventi
 GET|/visualizzaSpiaggia| |Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
 
+##### (Le prenotazioni per l'attrezzatura, gli eventi e gli ombrelloni sono consentite solo con buone condizioni meteo!)
+
 ### <div align="center"> Esempio di una prenotazione del posto ombrellone </div>
 <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Esempio%20Postman%20Cliente.png" ></div>
 
