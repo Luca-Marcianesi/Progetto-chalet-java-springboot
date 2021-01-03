@@ -32,7 +32,7 @@ public class Evento implements OggettoPrenotabile {
 	 */
 	private Previsioni previsione;
 	/**
-	 * Oggetto che contien il prezzo del evento
+	 * Oggetto che contiene il prezzo dell' evento
 	 */
 	private Prezzo prezzo;
 	
