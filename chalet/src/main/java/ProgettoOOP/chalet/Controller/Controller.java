@@ -116,7 +116,7 @@ public class Controller {
 	 * @param righe Numero di righe
 	 * @param colonne Numero di colonne
 	 * @return Risultato della creazione
-	 * @throws NumberFormatException  se all'inserimento di cidice e prezzo viene inserita una stringa
+	 * @throws NumberFormatException  se all'inserimento di codice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/creaSpiaggia")
 	public String test5(@RequestParam(name = "righe",defaultValue = "10")int righe,@RequestParam(name = "colonne",defaultValue = "10")int colonne ) {
