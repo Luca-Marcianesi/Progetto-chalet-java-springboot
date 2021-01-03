@@ -13,8 +13,8 @@ public class Tavolo implements OggettoPrenotabile {
 	/**
 	 * int numeroposti = numero dei posti per ogni tavolo.
 	 * prenotazione = oggetto della classe Prenotazione per specificare il nome della prenotazione.
-	 * string tipo = specifica cosa io voglio prenotare cioË il tavolo
-	 * boolean stato = serve per specificare lo stato appunto della disponibilit del tavolo.
+	 * string tipo = specifica cosa io voglio prenotare cio√® il tavolo
+	 * boolean stato = serve per specificare lo stato appunto della disponibilit√† del tavolo.
 	 */
 		private int numeroposti;
 		private boolean stato;
@@ -31,14 +31,14 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 		
 		/**
-		 *  Metodo set per impostare il numero dei posti 
+		 *  Metodo per impostare il numero dei posti 
 		 */
 		public void setPosti (int numeroposti) { 
 			this.numeroposti = numeroposti;
 		}
 		
 		/**
-		 * Metodo getPosti che restituisce il numero dei posti.
+		 * Metodo che restituisce il numero dei posti.
 		 * @return numeroposti.
 		 * 
 		 */
@@ -63,7 +63,7 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 		
 		/**
-		 * Metodo che restituisce lo stato, cioË libero o occupato, del tavolo.
+		 * Metodo che restituisce lo stato, cio√® libero o occupato, del tavolo.
 		 */
 		public boolean getStato () {
 			return this.stato;
@@ -80,7 +80,7 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 
 		/**
-		 * Metodo per impostare lo stato del tavolo, cioË libero o occupato.
+		 * Metodo per impostare lo stato del tavolo, cio√® libero o occupato.
 		 */
 		
 		public void setStato(boolean stato) {
@@ -96,7 +96,7 @@ public class Tavolo implements OggettoPrenotabile {
 		}
 		
 		/**
-		 * Metodo che restituisce la prenotazione, che Ë stata effettuata in precedenza.
+		 * Metodo che restituisce la prenotazione, che √® stata effettuata in precedenza.
 		 */
 		
 		public Prenotazione getPrenotazione () {
