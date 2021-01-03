@@ -231,7 +231,7 @@ public class Controller {
 	 * @return restituisce graficcamente la rappresentazione degli ombrelloni in una spiaggia
 	 */
 	@GetMapping("/visualizzaSpiaggia")
-	public String test15 (){
+	public String test14 (){
 		return this.chalet.listaOmbrelloni.toString();
 	}
 	/*
