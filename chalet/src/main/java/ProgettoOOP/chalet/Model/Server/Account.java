@@ -1,66 +1,80 @@
 package ProgettoOOP.chalet.Model.Server;
-/*
+//@author DiegoMignani
+
+
+/**
  * @author DiegoMignani
- * Classe che rappresenta un account e i suoi attributi 
+ * Classe che rappresenta un account personale
+ *
  */
 public class Account  {
-	/*
-	 * Username impostato dalla persona che possiede l'account
-	 */
 	private String username;
-	/*
-	 * Password impostata dal proprietario dell'account
-	 */
 	private String password;
-	/*
-	 * Costruttore che assegna le varie credenziali agli attributi
+	
+	/**
+	 * Costruttore dell'acoount
+	 * @param username nome del proprietario
+	 * @param password codice di verifica
 	 */
 	public  Account( String username ,String password) {
 		this.username = username;
 		this.password = password;
 	}
-	/*
-	 * Metodo utile per la verifica della password
-	 * @return restituisce l'esito del controllo
+	
+	/**
+	 * Controlla la password
+	 * @param password string da controllare
+	 * @return true se corrisponde altrimenti false
 	 */
-	public boolean controllaPassword (String Password) {
-		if(this.password == Password) return true;
+	public boolean controllaPassword (String password) {
+		if(password.equalsIgnoreCase(this.password)) return true;
 		else return false;
 	}
-	/*
-	 * Metodo che permette di immettere una nuova password controllando quella precedente 
+	
+	/**
+	 * Permette di modificare la password
+	 * @param vecchiaPassword password per il controllo
+	 * @param nuovaPassword nuova password
+	 * @return se la password è stata cambiata true altrimenti false
 	 */
-	public boolean modificaPass(String Vecchia_Password, String Nuova_Password) {
-		if (this.controllaPassword(Vecchia_Password)) {
-			this.password = Nuova_Password;
+	public boolean modificaPass(String vecchiaPassword, String nuovaPassword) {
+		if (this.controllaPassword(vecchiaPassword)) {
+			this.password = nuovaPassword;
 			return true;
 		}
 		else return false;
 		}
-	/*
-	 * Metodo che permette di immettere un nuovo username verificando la password 
+	
+	/**
+	 * Modifica l'username
+	 * @param password password dell'account
+	 * @param nuovoUsername nuovo username
+	 * @return se l username è stato cambiato true altrimenti false
 	 */
-	public boolean modificaUsername(String Password, String Nuovo_Username) {
-		if (this.controllaPassword(Password)) {
-			this.username = Nuovo_Username;
+	public boolean modificaUsername(String password, String nuovoUsername) {
+		if (this.controllaPassword(password)) {
+			this.username = nuovoUsername;
 			return true;
 			}
 		else return false;
 		}
-	/*
-	 * @return restituisce l'attributo username dell'oggetto Account
+	
+	/**
+	 * @return ritorna l username
 	 */
 	public String getUsername() {
 		return this.username;
 		}
-	/*
-	 * @return restituisce l'attributo password dell'oggetto Account
+	
+	/**
+	 * @return ritorna la password
 	 */
 	public String getPassword() {
 		return this.password;
 		}
-	/*
-	 * @return resituisce graficamente la descrizione dell'oggetto Account
+	
+	/**
+	 *@return ritorna in stringa la classe 
 	 */
 	public String toString() {
 		return(	 "User: " + username + "\n");
