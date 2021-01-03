@@ -72,7 +72,7 @@ public class Chalet {
 	}
 	
 	/**
-	 * Metedo che confronta username con quello del proprietarioe
+	 * Metedo che confronta username con quello del proprietario
 	 * @param user username da confrontare
 	 * @return ritorna true se l'user è quello del prop altrimenti false
 	 */
