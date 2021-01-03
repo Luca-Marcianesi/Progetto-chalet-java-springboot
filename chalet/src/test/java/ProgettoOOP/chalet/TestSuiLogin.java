@@ -25,13 +25,13 @@ package ProgettoOOP.chalet;
 
 			@Test
 			void test() {
-				assertTrue(chalet.server.Login("admin", "admin"));
-				assertTrue(chalet.server.Login("luca", "ciao"));
+				assertTrue(chalet.server.login("admin", "admin"));
+				assertTrue(chalet.server.login("luca", "ciao"));
 			}
 			
 			@Test
 			void test2() {
-				assertFalse(chalet.server.Login("luca", "hello"));
+				assertFalse(chalet.server.login("luca", "hello"));
 			}
 
 		}
