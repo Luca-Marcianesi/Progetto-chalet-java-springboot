@@ -80,7 +80,7 @@ public class Controller {
 	
 	/**
 	 * Permette al proprietario di creare un evento e lo aggiunge alla lista degli eventi
-	 * PuÃ² generare un eccezione se la data non esiste
+	 * Può generare un eccezione se la data non esiste
 	 * @param nome Nome dell'evento
 	 * @param posti Posti disponibili
 	 * @param anno Anno in cui si svolge 
