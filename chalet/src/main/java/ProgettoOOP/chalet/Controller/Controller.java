@@ -43,7 +43,7 @@ public class Controller {
 	 */
 	@PostMapping("/creaAccount")
 	public String test1(@RequestParam(name = "user")String username,@RequestParam(name = "pass")String password) {
-		if(this.chalet.server.Crea_Account(username, password)) {
+		if(this.chalet.server.creaAccount(username, password)) {
 			return "Account creato";
 			}
 		else return "Username in uso";
