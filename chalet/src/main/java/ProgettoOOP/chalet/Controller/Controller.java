@@ -234,7 +234,4 @@ public class Controller {
 	public String test14 (){
 		return this.chalet.listaOmbrelloni.toString();
 	}
-	/*
-	 * @return restituisce le informazioni meteo principali
-	 */
 }
