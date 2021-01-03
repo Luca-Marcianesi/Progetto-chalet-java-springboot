@@ -10,9 +10,10 @@ import ProgettoOOP.chalet.Model.Interfacce.OggettoPrenotabile;
 import ProgettoOOP.chalet.Model.Prenotazioni.*;
 import ProgettoOOP.chalet.Model.OtherClass.Previsioni;
 import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
-/*
+
+/**
  * @author DiegoMignani
- * Classe che gestisce gli ombrelloni della spiaggia
+ *Classe che gestisce gli ombrelloni della spiaggia
  */
 public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>{
 	/*
@@ -35,11 +36,11 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	 * numero di colonne di una spiaggia di ombrelloni
 	 */
 	private int colonne;
-	/*
+	/**
 	 * Costruttore che calcola il numero totale di ombrelloni,
 	 * aggiunge oggetti al vector.
-	 * @param righe di ombrelloni nella spiaggia
-	 * @param colonne di ombrelloni nella spiaggia
+	 * @param righe righe di ombrelloni nella spiaggia
+	 * @param colonne colonne di ombrelloni nella spiaggia
 	 */
 	public ListaOmbrelloni(int righe, int colonne){
 		this.colonne = colonne;
@@ -50,12 +51,13 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 			}
 		
 	}
-	/*
+	/**
 	 * Metodo che gestisce le prenotazioni
 	 * controllando lo stato di ogni ombrellone
 	 * e le condizioni meteo
 	 * @param posto rappresenta il posto di ogni ombrellone
 	 * @param nome rappresenta il nome della prenotazione dell'ombrellone
+	 * @return l esito della prenotazione
 	 */
 	public boolean prenota(int posto , String nome) {
 		this.setPrevisioni();
@@ -74,12 +76,12 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		return false;
 	
 	}
-	/*
+	/**
 	 * @return restituisce gli ombrelloni disponibili che ci sono nella spiaggia
 	 */
 	public int postiDisponibili() {
 		int disponibili = 0;
-		for (Ombrellone k : lista) if(k.getStato()) disponibili++;
+		for (Ombrellone ombrellone : lista) if(ombrellone.getStato()) disponibili++;
 		return disponibili;
 	}
 	/**
@@ -100,15 +102,16 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 		}
 		return false;
 		}
-	/*
-	 * Elimina il contenuto del Vector lista, listaPrenotazioni e l'attributo ultimaPosizione della classe Ombrellone
+	/**
+	 * Elimina il contenuto del Vector lista, listaPrenotazioni e l'attributo
+	 *  ultimaPosizione della classe Ombrellone
 	 */
 	public void reset() {
 		Ombrellone.resetUltimaPosizione();
 		this.lista.clear();
 		this.listaPrenotazioni.clear();
 		}
-	/*
+	/**
 	 * @return ritorna l'HashSet delle prenotazioni
 	 */
 	public HashSet <PrenotazionePosto> getListaPrenotazioni(){
