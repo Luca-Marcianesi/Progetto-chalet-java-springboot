@@ -42,7 +42,7 @@ public class UsaApi {
 	 */
 	private int giorniDaVedere = 5;
 	/**
-	 * Previsioni per singolo giono
+	 * Previsioni per singolo giorno
 	 */
 	private int scansioniGiornaliere = 8;
 	/**
@@ -52,7 +52,7 @@ public class UsaApi {
 	
 	
 	/**
-	 * Valorizza un oggetto di tipo lista con le previsioni a seconda dei valori sopra impostati(scansioniTotali  e scansioniGiornaliere)
+	 * Valorizza un oggetto di tipo lista con le previsioni a seconda dei valori sopra impostati(scansioniTotali e scansioniGiornaliere)
 	 *
 	 * @return Lista previsioni 
 	 */
@@ -138,12 +138,12 @@ public class UsaApi {
 	/**
 	 * Valorizza l'oggetto previsione per un dato giono prendendo i parametri
 	 * data,nome città ,Condizioni Principali(main) e temperatura
-	 * @param data Oggetto che contiene la data delle previsioni da ceracare
+	 * @param data Oggetto che contiene la data delle previsioni da cercare
 	 * @return restituisce l'oggetto previsione corrispondente...se non trova il
 	 *  giorno nella lista restituisce un oggetto con il parametro "principale" 
 	 *  contenente : "Previsioni non disponibili"
 	 *  Può generare due eccezzioni ClassCastException se è sbagliato il casting
-	 *  dei dati  NullPointerException se l'oggetto data è nullo
+	 *  dei dati o NullPointerException se l'oggetto data è nullo
 	 */
 	public Previsioni valorizzaPrevisione(LocalDate data) {
 			
@@ -199,7 +199,7 @@ public class UsaApi {
 	}
 	
 	/**
-	 * Prende il JSONObject della lettura dell'api con l url dei vini e valorizza 
+	 * Prende il JSONObject della lettura dell'api con l' url dei vini e valorizza 
 	 * un vector con i primi 5 vini restituiti dall api prendendone la  Descrizione
 	 * @return Vector di oggetti di tipo piatto
 	 */
