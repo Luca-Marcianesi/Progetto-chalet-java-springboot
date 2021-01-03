@@ -142,7 +142,7 @@ public class Controller {
 	/**
 	 * Permette all'utente di prenotare qualsiasi cosa a eccezione degli ombrelloni all'interno
 	 * dello chalet inserendo la cosa desiderata in richiesta
-	 * Controlla in ogni lista dello chalet se la richiesta Ã¨ presente
+	 * Controlla in ogni lista dello chalet se la richiesta è presente
 	 * @param richiesta Oggetto richiesto dall'utente
 	 * @param nome Nome dell'utente
 	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 Ã¨ il valore di default
@@ -165,7 +165,7 @@ public class Controller {
 	 * @param posto Posto della spiaggia da prenotare
 	 * @param nome Nome della persona che prenota
 	 * @return Risultato della prenotazione
-	 * @throws NumberFormatException Se all'inserimento di cidice e prezzo viene inserita una stringa
+	 * @throws NumberFormatException Se all'inserimento di codice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/prenotaOmbrellone")
 	public String test8(@RequestParam(name = "posto" )int posto,@RequestParam(name = "nome",defaultValue = "")String nome) throws EccezionePosto,EccezioneSpiaggia  {
@@ -197,7 +197,7 @@ public class Controller {
 	 * @param codice Codice del vino visibile chiamando la lista dei vini
 	 * @param prezzo Prezzo da inserire 
 	 * @return String con la risposta all operazione
-	 * @throws NumberFormatException se all'inserimento di cidice e prezzo viene inserita una stringa
+	 * @throws NumberFormatException se all'inserimento di codice e prezzo viene inserita una stringa
 	 */
 	@PostMapping("/cambiaVino")
 	public String test11(@RequestParam(name = "codice")int codice,@RequestParam(name = "prezzo")float prezzo) throws EccezionePrezzo {
@@ -208,7 +208,7 @@ public class Controller {
 	
 	/**
 	 * Effettua il logout dal sever chalet
-	 * @return ritorna il l'esito
+	 * @return ritorna l'esito
 	 */
 	@GetMapping("/logout")
 	public String test12() {
