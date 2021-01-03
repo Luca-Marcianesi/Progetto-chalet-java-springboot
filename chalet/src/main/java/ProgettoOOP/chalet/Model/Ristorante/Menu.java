@@ -5,7 +5,7 @@ import ProgettoOOP.chalet.Model.OtherClass.UsaApi;
 
 /**
  * @author Luca
- *Classe che gestisce il menÃƒÂ¹
+ *Classe che gestisce il menu
  */
 public class Menu {
 	/**
@@ -19,7 +19,7 @@ public class Menu {
 		
 	}
 	/**
-	 * Aggiunge un oggetto piatto al menÃƒÂ¹
+	 * Aggiunge un oggetto piatto al menu
 	 * @param descrizione string descrizione del piatto
 	 * @param prezzo float il prezzo del piatto
 	 */
@@ -45,7 +45,7 @@ public class Menu {
 	}
 	
 	/**
-	 *Trasforma il menÃƒÂ¹ in striga
+	 *Trasforma il menu in stringa
 	 */
 	public String toString() {
 		String stringa="";
