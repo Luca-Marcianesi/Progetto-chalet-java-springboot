@@ -92,6 +92,7 @@ spoonacular|https://api.spoonacular.com/food/wine/recommendation?wine=merlot&num
 * [JSON simple](https://code.google.com/archive/p/json-simple/)
 * [Spring Inizializr](https://start.spring.io/)
 * [Spring Tool 4](https://marketplace.eclipse.org/content/spring-tools-4-aka-spring-tool-suite-4?mpc=true&mpc_state=)
+* [Maven Integration for Eclipse](https://marketplace.eclipse.org/content/maven-integration-eclipse-luna-and-newer?mpc=true&mpc_state=)
 
 ***
 La classe Prenotazione chiede in ingresso un intero che per gli oggetti che sono prenotabili da una sola persona è fissato a uno mentre, per gli eventi, il valore dipende dalla dimensione del vettore prenotazioni proprio dell'oggetto "Evento" stesso.
