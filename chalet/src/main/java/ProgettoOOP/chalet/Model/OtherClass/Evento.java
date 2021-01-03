@@ -95,7 +95,7 @@ public class Evento implements OggettoPrenotabile {
 	 * Effettua un primo controllo sulle condizioni meteo e un secondo sulla 
 	 * disponibilita' di posti per l'evento
 	 *@return ritorna true ovvero evento disponibile se le condizioni meteo lo permettono e
-	 *è disponibile un posto disponibile altrimenti ritorna false
+	 *se è disponibile un posto altrimenti ritorna false
 	 */
 	public boolean getStato() {
 		if(this.previsione.getCondizioni()) {
