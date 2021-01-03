@@ -22,7 +22,7 @@ public   class Informazioni {
 	 */
 	private UsaApi api = new UsaApi();
 	/**
-	 *  float Media temperatura settimana
+	 *  float Media temperatura della settimana
 	 */
 	private  float temperaturaMedia;
 	
@@ -46,7 +46,7 @@ public   class Informazioni {
 	}
 	
 	/**
-	 * @return float retituisce la temp media
+	 * @return float retituisce la temperatura media
 	 */
 	public float getTemperaturaMedia() {
 		return this.temperaturaMedia;
