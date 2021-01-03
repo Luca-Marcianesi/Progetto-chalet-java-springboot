@@ -82,7 +82,7 @@ public class Ombrellone implements OggettoPrenotabile{
 		return this.prezzo.getPrezzo();
 	}
 	/*
-	 * @return restituisce la stringa della situazione dell'ombrellone
+	 * @return restituisce la posizione dell'ombrellone in stringa
 	 */
 	public String toString() {
 		if(this.stato) return("\t["+ this.posizione +"]");
