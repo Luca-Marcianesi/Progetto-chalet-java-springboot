@@ -35,10 +35,10 @@ public class Server {
 	
 	/**
 	 * Permette di creare un account ed aggiungerlo alla lista degli account 
-	 * se username non è in uso
+	 * se l'username non è in uso
 	 * @param username String con l'username del nuovo account
 	 * @param password String  con la password del nuovo account
-	 * @return boolean true se l'account è stato creato con successo false altrimenti
+	 * @return boolean true se l'account è stato creato con successo,  altrimenti false
 	 */
 	public boolean creaAccount (String username , String password) {
 		if (!this.controlla(username)){
@@ -51,7 +51,7 @@ public class Server {
 		}
 	
 	/**
-	 *Trasforma la lista degli account in String
+	 *Trasforma la lista degli account in Stringa
 	 */
 	public String toString() {
 		String ritorno = "";
@@ -62,7 +62,7 @@ public class Server {
 	/**
 	 * Controlla  se è presente un account con tale username
 	 * @param username String da controllare
-	 * @return  boolean true se l'username è presente false altrimenti
+	 * @return  boolean true se l'username è presente, altrimenti false 
 	 */
 	private boolean controlla(String username) {
 		
@@ -83,7 +83,7 @@ public class Server {
 	}
 	
 	/**
-	 * Controlla se la password corrisponde alla password del account di nome "username"
+	 * Controlla se la password corrisponde alla password dell' account di nome "username"
 	 * @param username String con l'username dell'account
 	 * @param password String da controllare la corrispondenza
 	 * @return boolean true se username e password corrispondono allo stesso account 
