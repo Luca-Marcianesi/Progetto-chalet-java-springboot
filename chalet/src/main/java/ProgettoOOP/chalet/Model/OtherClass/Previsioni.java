@@ -24,7 +24,7 @@ public class Previsioni implements OggettoConValore{
 		private LocalDate data;
 		 
 		 /**
-		 * String che contiene le condizioni pricipali che descrivono le previsioni
+		 * String che contiene le condizioni principali che descrivono le previsioni
 		 */
 		private String principale;
 		 
@@ -35,7 +35,7 @@ public class Previsioni implements OggettoConValore{
 		 
 		  
 		 /**
-		 * @return ritorna il nome della cittÃƒÂ 
+		 * @return ritorna il nome della città
 		 */
 		public String getNome() {
 			 return this.nome;
@@ -71,7 +71,7 @@ public class Previsioni implements OggettoConValore{
 		 }
 		 
 		 /**
-		  * Imposta il nome della cittÃƒÂ 
+		  * Imposta il nome della città 
 		 * @param nome il nome da inserire
 		 */
 		public void setNome ( String nome ) {
@@ -117,8 +117,8 @@ public class Previsioni implements OggettoConValore{
 			}
 			}
 			/**
-			 * Ritorna un bool che rappresenta le previsioni true(bel tempo le previsioni non sono disp.) false (brutto tempo)
-			 * @return true(Non piove o le previsioni non sono disp.) false (brutto tempo)
+			 * Ritorna un boolean che rappresenta le previsioni: true(se c'è bel tempo o le previsioni non sono disponibili.) false (brutto tempo)
+			 * @return true(Non piove o le previsioni non sono disponibili.) false (brutto tempo)
 			 */
 			public boolean getCondizioni() {
 				switch (this.principale) {
@@ -127,7 +127,7 @@ public class Previsioni implements OggettoConValore{
 				  case "Ci sono un po' di nuvole" : 
 						return true;
 				  case "Sta piovigginando" : 
-						return true;
+						return false;
 				  case "Previsioni non disponibili":
 					  return true;		
 				  default :
@@ -139,7 +139,7 @@ public class Previsioni implements OggettoConValore{
 			 *Trasforma la previsione in stringa
 			 */
 			public String toString () {
-			 return ( "Nome cittÃƒÂ : " + this.nome + "\ndata: " + this.data + "\ntemperatura: " +  this.temperatura
+			 return ( "Nome città : " + this.nome + "\ndata: " + this.data + "\ntemperatura: " +  this.temperatura
 					 + " Ã‚Â°C\ncondizioni meteo: " + this.principale );	 
 		 }
 		
