@@ -12,7 +12,7 @@ import ProgettoOOP.chalet.Model.OtherClass.Prezzo;
 public class Piatto   implements  OggettoConValore {
 	
 	/**
-	 * Codice che rappresentail piatto
+	 * Codice che rappresenta il piatto
 	 */
 	private  int codice;
 	private static int ultimoCodice = 1000;
@@ -48,7 +48,7 @@ public class Piatto   implements  OggettoConValore {
 		}
 	
 	/**
-	 * Modifica la prezzo del piatto
+	 * Modifica il prezzo del piatto
 	 * @param prezzo float modifica il prezzo
 	 */
 	public void setPrezzo(float prezzo) {
@@ -56,7 +56,7 @@ public class Piatto   implements  OggettoConValore {
 		}
 	
 	/**
-	 * @return int che rappresenta il codice del piatto
+	 * @return intero che rappresenta il codice del piatto
 	 */
 	public int getCodice() {
 		return this.codice;
@@ -78,7 +78,7 @@ public class Piatto   implements  OggettoConValore {
 	}
 	
 	/**
-	 *Trasforma il piatto in una string
+	 *Trasforma il piatto in una stringa
 	 */
 	public String toString() {
 		return (  this.codice + this.descrizione + " " + this.prezzo.getPrezzo() + "euro" );
