@@ -83,6 +83,28 @@ POST|/cambiaVino|"codice" "prezzo"|Permette di modificare i prezzi dei vini
   <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/diagramma%20delle%20sequenze%20Proprietario.jpg" width="600" height="400" ></div>
 
 ***
+## Eccezioni
+* #### Eccezione posto
+
+    Se viene immesso un posto minore di 1
+  
+* #### Eccezione prezzo
+
+   Se viene immesso un prezzo negativo
+  
+* #### Eccezione spiaggia
+
+   Se viene richiesta la prenotazione di un ombrellone in assenza di una spiaggia
+  
+***
+## TEST
++ Sui Login
+  + Accesso effettuato
+  + Credenziali sbagliate
++ Sulle previsioni
+  + Previsioni attuali
+  + Previsioni non disponibili
+***
 ## <div align="center">API utilizzati<div align="center">
 
 Nome|Url|Descrizione
