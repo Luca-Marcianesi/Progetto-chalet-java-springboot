@@ -74,7 +74,7 @@ public class Chalet {
 	/**
 	 * Metedo che confronta username con quello del proprietario
 	 * @param user username da confrontare
-	 * @return ritorna true se l'user è quello del prop altrimenti false
+	 * @return ritorna true se l'user è quello del propietario altrimenti false
 	 */
 	public boolean proprietario(String user) {
 		if( user.equalsIgnoreCase(this.proprietario.getUsername())) return true;
