@@ -146,7 +146,7 @@ public class Controller {
 	 * @param richiesta Oggetto richiesto dall'utente
 	 * @param nome Nome dell'utente
 	 * @param posti Posti se ad esempio si prenota il tavolo altrimenti 1 Ã¨ il valore di default
-	 * @return Esito della prenotaazione
+	 * @return Esito della prenotazione
 	 * @throws NumberFormatException
 	 */
 	@PostMapping("/prenota")
