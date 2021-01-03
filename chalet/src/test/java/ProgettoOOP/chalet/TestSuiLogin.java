@@ -15,7 +15,7 @@ package ProgettoOOP.chalet;
 			
 			@BeforeEach
 			 void setUp() {
-				chalet.server.Crea_Account("luca", "ciao");
+				chalet.server.creaAccount("luca", "ciao");
 			}
 			
 			@AfterEach
