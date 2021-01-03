@@ -1,4 +1,4 @@
-# Progetto-Chalet
+# <div align="center"> Progetto-Chalet </div>
 
 > "Progetto-Chalet" è un programma che si occupa della gestione di uno stabilimento balneare dal punto di vista del Cliente e del Proprietario.
 > Effettuando l'accesso come Cliente con il proprio account si ha la possibilità di prenotare: eventi, posti ombrelloni, tavoli e carta dei vini per il ristorante.
@@ -7,7 +7,7 @@
 > Per comodità abbiamo utilizzato il software [Postman](https://www.postman.com/) per effettuare le varie operazioni sopra citate tramite la porta "localhost:8080". 
 > Di seguito sono elencate le rotte che devono essere inserite dopo la porta appena menzionata, per eseguire le relative chiamate.
 ***
-## Path da utilizzare per il profilo Cliente e Proprietario
+## <div align="center"> Path da utilizzare per il profilo Cliente e Proprietario </div>
 
 TIPO |ROTTA|INPUT|DESCRIZIONE
 ------ | ---|----|----------
@@ -21,11 +21,11 @@ GET|/vini| |Restituisce la lista dei vini
 GET|/visualizzaEventi| |Visualizza l'elenco dei prossimi eventi
 GET|/visualizzaSpiaggia| |Visualizza graficamente la disposizione degli ombrelloni in una spiaggia
 
-### Esempio di una prenotazione del posto ombrellone
+### <div align="center"> Esempio di una prenotazione del posto ombrellone </div>
 <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Esempio%20Postman%20Cliente.png" ></div>
 
 ***
-## Path da utilizzare per il profilo Proprietario
+## <div align="center"> Path da utilizzare per il profilo Proprietario </div>
 
 TIPO |ROTTA|INPUT|DESCRIZIONE
 ------ | --|------|----------
@@ -35,7 +35,7 @@ POST|/creaSpiaggia|"righe" "colonne"|Creazione di una spiaggia inserendo le righ
 GET|/chalet| |Visualizza a schermo tutte le informazioni utili dello chalet
 POST|/cambiaVino|"codice" "prezzo"|Permette di modificare i prezzi dei vini
 
-### Esempio di login del prorpietario con le credenziali di default
+### <div align="center"> Esempio di login del prorpietario con le credenziali di default </div>
 <div align="center"><img src="https://raw.githubusercontent.com/Luca-Marcianesi/Progetto-chalet/master/img/Esempio%20Postman%20Proprietario.png"" ></div>
 
 ***
