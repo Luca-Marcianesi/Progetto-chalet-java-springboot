@@ -9,10 +9,10 @@ import ProgettoOOP.chalet.Model.Liste.ListaOggettiPrenotabili;
 public class Sala extends ListaOggettiPrenotabili<Tavolo>{
 	
 	/**
-	 * Metodo che prende in ingresso i parametri richiesti per una prenotazione del tavolo cioè
-	 * richiesta(tavolo), nome e numero delle persone. Il metodo cerca se esiste un oggetto tavolo
-	 * con il numero di posti necessari. Se è disponibile lo prenota e aggiunge un oggetto prenotazione
-	 * e restituisce true. Se la prenotazione invece non è stato possibile effettuarla, restituisce false.
+	 * Metodo che prende in ingresso i parametri richiesti per una prenotazione del tavolo cioÃ¨
+	 * richiesta(tavolo), nome e numero delle persone. Il metodo cerca, se esiste, un oggetto tavolo
+	 * con il numero di posti necessari. Se Ã¨ disponibile lo prenota e aggiunge un oggetto prenotazione
+	 * e restituisce true. Se invece, la prenotazione non Ã¨ andata a buon fine, restituisce false.
 	 */
 	
 	public boolean prenota(String richiesta,String nome,int numPers){
