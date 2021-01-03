@@ -25,7 +25,7 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	 */
 	private Vector<Ombrellone> lista = new Vector<Ombrellone>();
 	/*
-	 * Oggetto di tipo previsioni che tiene conto della situazione metereologiche
+	 * Oggetto di tipo previsioni che tiene conto della situazione metereologica
 	*/
 	private Previsioni previsione ;
 	/*
