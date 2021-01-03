@@ -5,7 +5,7 @@ import ProgettoOOP.chalet.Model.Liste.ListaOggettiConValore;
 
 /**
  * @author LucaMarcianesi
- *Gestisce le informaazioni dello chalet
+ *Gestisce le informazioni dello chalet
  */
 public   class Informazioni {
 	
