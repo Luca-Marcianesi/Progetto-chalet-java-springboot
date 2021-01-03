@@ -25,7 +25,7 @@ public class Lista<T> {
 	
 	/**
 	 * Sostituisce l'oggetto in  una posizione con un nuovo elemento
-	 * @param posizione  posizione del oggetto da sostituire
+	 * @param posizione  posizione dell' oggetto da sostituire
 	 * @param nuovoOggetto  il nuovo oggetto da inserire
 	 */
 	public void sostituisci(int posizione, T nuovoOggetto) {
