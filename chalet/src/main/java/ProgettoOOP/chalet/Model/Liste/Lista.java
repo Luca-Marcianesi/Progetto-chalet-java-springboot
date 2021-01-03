@@ -5,7 +5,7 @@ import java.util.Vector;
 /**
  * @author LucaMarcianesi
  *Classe generale che gestisce una lista di generici oggetti
- * @param <T> generico oggetti della lista
+ * @param <T> generico oggetto della lista
  */
 public class Lista<T> {
 	
