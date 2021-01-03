@@ -3,7 +3,7 @@ package ProgettoOOP.chalet.Model.Liste;
 import ProgettoOOP.chalet.Model.Interfacce.OggettoConValore;
 
 /**
- * @author LucaMarcianesi
+ * @author Luca Marcianesi
  *
  * @param <T> generico oggettoConValore
  */
@@ -29,7 +29,7 @@ public class ListaOggettiConValore <T extends OggettoConValore> extends Lista<T>
 		}
 		
 		/**
-		 * @return ritorna in string la mesia
+		 * @return ritorna in string la media
 		 */
 		public String getMedia() {
 			return (this.media() + "");
