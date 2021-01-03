@@ -22,7 +22,7 @@ public class Server {
 	 * @param password String con la password dell'utente
 	 * @return ritorna true se l'username esiste e la password ad esso associata corrisponde
 	 */
-	public boolean Login (String username , String password) {
+	public boolean login (String username , String password) {
 		if (this.controlla(username)) {
 			if(this.controlla(username, password)){ 
 				return true;
