@@ -59,7 +59,7 @@ public class Controller {
 	 */
 	@PostMapping("/login")
 	public String test2(@RequestParam(name = "user")String username,@RequestParam(name = "pass")String password) {
-		if(this.chalet.server.Login(username, password)) {
+		if(this.chalet.server.login(username, password)) {
 			this.accesso = true;
 			this.user = username;
 			return ("Accesso effettuato");
@@ -220,7 +220,7 @@ public class Controller {
 			}	
 		}
 	/*
-	 * @return restituisce tutte le informazioni più importanti dei futuri eventi eventi
+	 * @return restituisce tutte le informazioni più importanti dei futuri eventi
 	 */
 	@GetMapping("/visualizzaEventi")
 	public ListaOggettiPrenotabili<Evento> test13(){
