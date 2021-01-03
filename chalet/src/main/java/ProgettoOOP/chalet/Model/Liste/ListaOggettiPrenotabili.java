@@ -16,7 +16,7 @@ public class ListaOggettiPrenotabili<T extends OggettoPrenotabile>  extends List
 	 * e dal nome di chi fa la prenotazione (nome)
 	 * Scorre la lista di oggetti e fa due verifiche:1 se esiste un oggetto con lo stesso nome della 
 	 * richiesta e se lo trova se quel oggetto ÃƒÂ¨ disponibile
-	 * Se lo trova ed ÃƒÂ¨ disponibile modifica lo stato dell'oggetto e aggiune la prenotazione all'oggetto
+	 * Se lo trova ed è disponibile modifica lo stato dell'oggetto e aggiune la prenotazione all'oggetto
 	 * @param richiesta nome dell'oggetto
 	 * @param nome nome di chi fa la prenotazione
 	 * @return ritorna vero se la prenotazione ÃƒÂ¨ andata a buon fine altrimenti torna false
