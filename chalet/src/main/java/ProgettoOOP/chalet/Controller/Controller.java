@@ -228,7 +228,7 @@ public class Controller {
 	}
 	
 	/*
-	 * @return restituisce graficcamente la rappresentazione degli ombrelloni in una spiaggia
+	 * @return restituisce graficamente la rappresentazione degli ombrelloni in una spiaggia
 	 */
 	@GetMapping("/visualizzaSpiaggia")
 	public String test14 (){
