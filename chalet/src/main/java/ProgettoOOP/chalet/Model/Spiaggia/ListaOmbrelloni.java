@@ -154,7 +154,7 @@ public class ListaOmbrelloni extends ListaOggettiPrenotabili<OggettoPrenotabile>
 	*/
 	private void setPrevisioni() {
 		UsaApi api = new UsaApi();
-		LocalDate oggi = Instant.ofEpochSecond(System.currentTimeMillis()).atZone(ZoneId.systemDefault()).toLocalDate();
+		LocalDate oggi = LocalDate.now();
 		this.previsione = api.valorizzaPrevisione(oggi);
 		}
 
